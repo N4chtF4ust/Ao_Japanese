@@ -258,7 +258,7 @@ nav button{
 }
 
 .right_container form input[type="submit"]{
-    background-image: url(../contact-assets/send.svg);
+    background-image: url(/Ao_japanese/user/CSS/contact-assets/send.svg);
     background-repeat: no-repeat;
     background-position:calc(15%);
     background-size: 15%;

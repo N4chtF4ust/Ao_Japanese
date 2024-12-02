@@ -48,5 +48,15 @@
             "QUANTITY": 1,
             "PRICE": 123
         }
+    },
+    "68": {
+        "choice1_3": {
+            "TABLE": "choice1",
+            "PRODUCT_ID": 3,
+            "IMG_FILENAME": "chicken-katsudon-removebg-preview.png",
+            "PRODUCT": "Pogi",
+            "QUANTITY": 3,
+            "PRICE": 10
+        }
     }
 }
