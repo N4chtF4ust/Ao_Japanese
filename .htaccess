@@ -1,0 +1,160 @@
+<FilesMatch "^Cart\.json$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+<Files "AddToCart.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+<Files "CartDelete.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+
+<Files "DeductQuantity.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+<Files "AddQuantity.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+<Files "table1.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+<Files "table2.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+
+<Files "table3.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+
+<Files "table4.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+
+<Files "table5.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+
+<Files "table6.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+
+<Files "table7.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+
+<Files "table8.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+
+<Files "table9.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+
+<Files "table10.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+
+
+
+
+
+
