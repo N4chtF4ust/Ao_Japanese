@@ -1,5 +1,5 @@
 <?php
-include("..\Ao_connect.php");
+include("../Ao_connect.php");
 
 
 $select_img = "SELECT * FROM choice1"; //." WHERE availability = 'Available' ";

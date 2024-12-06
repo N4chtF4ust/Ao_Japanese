@@ -50,9 +50,21 @@ echo "<script>console.log('This the username: '+'$username')</script>";
            
         </div>
 
-      <img src="..\CSS\product-asset\cart.svg" alt=""  id="cart" onclick="toggleCart(document.getElementById('cart_wrapper'))">
+        <div class="cart_icon_wrapper" onclick="toggleCart(document.getElementById('cart_wrapper'))">
+          
+          <img src="../CSS/product-asset/cart.svg" alt=""  id="cart" >
+          <h3>0</h3>
+
+        </div>
+
+  
       
-        <button  onclick="window.location.href='../PHP/Userpage_out.php'">Back</button>
+        <button  onclick="window.location.href='../PHP/Userpage_out.php'">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+  <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+</svg>  <h3>Out</h3>
+        </button>
     </nav>
 
     
@@ -72,6 +84,7 @@ echo "<script>console.log('This the username: '+'$username')</script>";
             <img src="../CSS/product-asset/Banner 3.jpg" class="slide-image">
         </div> 
     </div>
+
 
     <div class="container_wrapper">
         <div class="choice">
@@ -119,28 +132,16 @@ for ($i=1; $i <=10 ; $i++) {
           
         </div>
 
-        <div class="button_wrapper">
+        <?php
+        
+            if(isset($_SESSION['TotalOfCart'])){
+               $haha = $_SESSION['TotalOfCart'];
+            }
+        ?>
 
-           <button id="cart_buy">
+ 
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
-            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
-            </svg> 
-
-            <h4> Buy </h4> 
-
-          </button>
-           <button id="cart_close" onclick="toggleCart(document.getElementById('cart_wrapper'))">
-
-           <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="50%" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
-           <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-           
-          </svg>
-           <h4>Close</h4>
-          </button>
-
-        </div>
+       
            
     </div>
 <script>

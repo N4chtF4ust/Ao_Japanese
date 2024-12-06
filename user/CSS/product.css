@@ -16,18 +16,12 @@
 body{
     margin: 0;
     padding: 0;
-   
-  
-
     font-family: "Open Sans", sans-serif;
-
-   overflow-x:hidden ;
+    overflow-x:hidden ;
     background-color: var(--nav-header--);
- 
 }
 
 /*Navigation*/
-
 
 nav{
     background-color:var(--nav-header--);
@@ -40,6 +34,19 @@ nav{
     align-items: center;
     color: #810000;
     box-shadow: 0 0 5px black;
+    min-height: 94px;
+
+}
+
+nav svg{
+    min-height: 22px;
+    min-width: 22px;
+}
+
+nav button{
+    min-height: 47px;
+    min-width: 75px;
+
 }
 
 .nav_dropdown{
@@ -71,7 +78,7 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     font-family: "Open Sans", sans-serif;
     font-weight: bolder;
    
@@ -120,8 +127,8 @@ nav{
 }
 
 nav button{
-    
-   margin-right: 3%;
+    position: relative;
+    right: 5%;
     width: 8%;
     height: 50%;
     border-radius: 15px;
@@ -134,14 +141,34 @@ nav button{
   
     background-color: #810000;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 75px;
+    min-height: 47px;
+
+    max-width: 151px;
+    max-height: 68px;
     
+    
+}
+
+nav button > *{
+    width: 30%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100%;
+
 }
 .menu_logo_wrapper{
 
     left: 5%;
     z-index: 3;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     position: relative;
  
     display: flex;
@@ -210,6 +237,7 @@ nav button{
     margin: 0;
     padding: 0;
     cursor: pointer;
+  
     
 
     
@@ -233,7 +261,7 @@ nav button{
 
 .slide-image{
 
-    margin-top:10% ;
+    margin-top:15% ;
   
     width: 100%;
     vertical-align: middle;
@@ -249,7 +277,6 @@ nav button{
     margin: auto;
 }
 
-
 /*---------*/
 
 .container_wrapper{
@@ -264,10 +291,7 @@ nav button{
     align-items: center;
    
     overflow-y: auto;
-    
-  
 
-  
 }
 
 .choice{
@@ -410,10 +434,7 @@ nav button{
 
 .img_wrapper svg{
     color: var(--menu-logo--);
-
     position: absolute;
-
-    
 }
 
 .quantity_wrapper{
@@ -455,12 +476,26 @@ nav button{
 
 }
 
-#cart{
-    width: 2%;
-    position: absolute;
-    right: 15%;
+.cart_icon_wrapper{
+    background-color: yellow;
+    width: 5%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+
+.cart_icon_wrapper img {
+  
+    width: 50%;
+ 
+   
+    position: relative;
+   
     cursor: pointer;
-   }
+}
 
 .cart_wrapper{
     background-color: var(--nav-header--);
@@ -484,7 +519,7 @@ nav button{
    
  
     width: 100%;
-    height: 95%;
+    height: 90%;
     overflow-y: auto;
    
     
@@ -492,7 +527,8 @@ nav button{
 .img_cart_wrapper{
     width: 20%;
     height: 80%;
-    background-color: yellow;
+
+
     display: grid;
     place-items: center;   
     position: relative;  
@@ -507,10 +543,11 @@ nav button{
 
 }
 .product_name_wrapper,.product_quantity_wrapper,.product_price_wrapper{
-    font-size: 70%;
+    font-size: 80%;
+    background-color: yellow;
 }
 .product_name_wrapper{
-    background-color: yellow;
+
     width: 20%;
     height: 80%;
    
@@ -519,7 +556,7 @@ nav button{
 }
 
 .product_quantity_wrapper{
-    background-color: yellow;
+
     width: 5%;
     height: 80%;
     
@@ -528,7 +565,7 @@ nav button{
 }
 
 .product_price_wrapper{
-    background-color: yellow;
+  
     width: 20%;
     height: 80%;
   
@@ -543,7 +580,7 @@ nav button{
 
 
 .product{
-    background-color: pink;
+    background-color:pink;
     width: 100%;
     height: 10vh;
     display: flex;
@@ -571,8 +608,6 @@ nav button{
     max-width: 50px;
     max-height: 50px;
     cursor: pointer;
-
-    
 }
 
 .product button:active{
@@ -582,23 +617,30 @@ nav button{
 
 }
 
-
+.total_wrapper{
+    background-color: paleturquoise;
+    width: 100%;
+    height: 5%;
+    bottom: 5%;
+    position: absolute;
+    display: grid;
+    place-items: center;
+}
 
 .button_wrapper{
     position: absolute;
     width: 100%;
     height: 5%;
     bottom: 0;
-
- 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    background-color: yellowgreen;
 }
 .button_wrapper button{
-    width: 40%;
-    height: 80%;
-    border-radius: 30px;
+    width: 50%;
+    height: 100%;
+
  
     border: none;
     background-color: var(--menu-logo--);
@@ -608,27 +650,32 @@ nav button{
     font-family: "Open Sans", sans-serif;
     font-weight: bolder;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+
+  
     font-size: 80%;
+    position: relative;
 }
 
 .button_wrapper button svg{
     margin: 0;
     padding: 0;
-   
-    width: 25%;
+    width: 10%;
+    position: absolute;
+    top: 50%;
+    left: 42.5%;
+    transform: translate(-50%,-50%);
 }
 
 .button_wrapper button h4{
     margin: 0;
     padding: 0;
    
-    width: 25%;
+    width: 10%;
+    position: absolute;
+    top: 50%;
+    left: 57.5%;
+    transform: translate(-50%,-50%);
 }
-
 
 .button_wrapper button:active{
     background-color: var(--nav-header--);
@@ -641,14 +688,7 @@ nav button{
 }
 
 
-
-
-
-
-
 @media screen and (max-width: 767px)  {
-
-
 
 .review_box{
     width: 100%;
@@ -667,14 +707,17 @@ nav button{
     right: -100%;
 }
 
-
-
 /*Hamburger menu*/
 .logo_wrapper{
 display: none;
 }
 .menu_logo{
     display: block;
+}
+
+.menu_logo_wrapper{
+    width: 30px;
+    height: 30px;
 }
 
 .nav_wrapper{
@@ -705,9 +748,6 @@ display: none;
    
 }
 
-
-
-
 .nav_wrapper.click{
     left: 0;
     display: flex;
@@ -732,11 +772,7 @@ display: none;
     height: 5%;
 }
 
-#cart{
-    width: 7%;  
-    right: 30%;
-}
-  
+
 .cart_wrapper{
     width: 100%;
 }
@@ -744,66 +780,33 @@ display: none;
 .slide-image{
     margin-top: 35%;
 }
+
+.cart_icon_wrapper{
+    width: 20%;
+
+    position: absolute;
+    left: 15%;
+}
+
+.cart_icon_wrapper img{
+    width: 50%;
+    height: 50%;
+
+}
  
 }
 
 /*Phone Landscape*/
 
-@media  screen and (max-width: 767px) and (orientation:landscape){
-    /*Nav*/
-    nav{
-        height: 15%;
-    }
-    
-    nav button{
-        width: 10%;
-        border-radius: 10px;
-    }
-
-  
-
-    /*-----------*/
-
-    #cart{
-        right: 15%;
-        width: 4%;
-    }
-    .slide-image{
-        margin-top: 20%;
-    }
- 
-
-    .review_wrapper{
-        height: 100%;
-    }
-    .review_box{
-       height: 100%;
-       width: 25%;
-    }
-
-    .review_content{
-        width: 90%;
-        
-    }
-
-    .product button{
-        max-width: 25px;
-        max-height: 25px;
-        width: 1%;
-       
-    }
-
-    
-
-}
-
-
 
 /*Mobile view*/
 
-@media screen and (min-width: 768px) and  (max-width: 1024px)  {
-   
-   
+@media screen and (min-width: 768px) and  (max-width: 1280px)  {
+
+    .slide-image{
+        margin-top: 25%;
+    }
+
     .review_box{
         width: 50%;
     }
@@ -825,6 +828,16 @@ display: none;
 
 .menu_logo{
     display: block;
+}
+
+.menu_logo_wrapper{
+    width: 30px;
+    height: 30px;
+}
+
+
+nav button{
+    width: 15%;
 }
 
 
@@ -887,12 +900,121 @@ display: none;
 .cart_wrapper{
     width: 100%;
 }
+.cart_icon_wrapper{
+    width: 10%;
+    position: absolute;
+    left: 10%;
+}
+
+.cart_icon_wrapper img{
+    height: 50%;
+}
+
 
   
+}
+
+@media  screen and (max-width: 932px) and (orientation:landscape){
+    /*Nav*/
+    
+    .choice{
+        margin: 2% 0 2% 0;
+    }
+    nav{
+        height: 20%;
+
+    }
+
+    #nav_wrapper{
+        font-size: 100%;
+    }
+    
+    nav button{
+        width: 15%;
+        border-radius: 10px;
+    }
+
+    .menu_logo_wrapper{
+        width: 30px;
+        height: 30px;
+    }
+
+    /*-----------*/
+
+   
+
+    .review_wrapper{
+        height: 100%;
+    }
+    .review_box{
+       height: 100%;
+       width: 50%;
+    }
+
+    .review_content{
+        width: 90%;
+        
+    }
+
+    .product{
+        height: 25%;
+    }
+
+    .product button{
+    
+   
+        width: 4.5%;
+       
+    }
+
+    .product button svg {
+      height: 100%;
+    }
+
+    .cart_container{
+        height: 80%;
+    }
+
+    .total_wrapper{
+        height: 10%;
+        bottom: 10%;
+    }
+    .button_wrapper{
+        height: 10%;
+    }
+
+    .button_wrapper button svg{
+      
+        left: 45.5%;
+     
+    }
+    
+    .button_wrapper button h4{
+       
+        left: 53.5%;
+        
+    }
+
+    .cart_icon_wrapper{
+        width: 10%;
+        height: 40%;
+    
+        
+        left: 10%;
+    }
+    
 
 
+} 
+
+@media screen and (min-width: 933px) and  (max-width: 1280px)  and (orientation:landscape) {
 
 
+    .cart_icon_wrapper{
+        width: 5%;
+    }
+  
+    
 
 
 }
