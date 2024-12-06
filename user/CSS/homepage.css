@@ -246,6 +246,30 @@ nav button{
     justify-content: center;
     animation: transitionIn 0.60s;
 }
+/*---------Username effect-----------*/
+.username{
+    font-size: 35px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 800;
+    opacity: 0; 
+    animation: fadeInOut 10s forwards;
+}
+
+@keyframes fadeInOut {
+    0% {
+      opacity: 0; 
+    }
+    20% {
+      opacity: 1; 
+    }
+    80% {
+      opacity: 1; 
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+/*--------------------------------*/
 
 .title{
     font-family: "Ubuntu", sans-serif;
