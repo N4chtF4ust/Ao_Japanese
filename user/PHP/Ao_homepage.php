@@ -62,6 +62,14 @@ echo "<script>console.log('This the username: '+'$username')</script>";
 
     <div class="section-container">
         <div class="content">
+
+            <h1 class="username">    
+            <?php
+            echo "Welcome $username";
+            ?>
+            </h1>
+
+
             <h1 class="title">AO Japanese Cuisine</h1>
             <p class="description">Blends traditional Japanese flavors with modern artistry. 
                 Enjoy expertly crafted sushi, ramen, and more, made with the finest ingredients 

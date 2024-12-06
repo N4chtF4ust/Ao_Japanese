@@ -48,17 +48,17 @@
                 <div class="right_container">
 
                     <h1>Contacts</h1>
-                    <form action="" id="contact_form">
+                    <form action="mail.php" id="contact_form" method="post">
                         <label for="name">Name: </label>
                         <input type="text" name="name" id="name">
 
-                        <label for="contact">Phone Number: </label>
-                        <input type="tel" name="contact" id="contact">
+                        <label for="email">Email: </label>
+                        <input type="tel" name="email" id="email">
 
                         <label for="Messages">Messages: </label>
                         <textarea name="Messages" id="Messages" placeholder="Enter your message here...." form="contact_form"></textarea>
                         <br>
-                        <input type="submit" value="Send" class="Send" id="Send">
+                        <input type="submit" value="Send" class="Send" id="Send" name="Send">
                     </form>
                 
                     <div class="social">
