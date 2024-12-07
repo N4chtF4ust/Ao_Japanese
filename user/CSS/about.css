@@ -33,12 +33,24 @@ nav{
     width: 100%;
     height: 10%;
     position: fixed;
-    z-index: 20;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #810000;
     box-shadow: 0 0 5px black;
+    min-height: 94px;
+}
+
+nav svg{
+    min-height: 22px;
+    min-width: 22px;
+}
+
+nav button{
+    min-height: 47px;
+    min-width: 75px;
+
 }
 
 .nav_dropdown{
@@ -120,7 +132,8 @@ nav{
 
 nav button{
     
-   margin-right: 3%;
+    position: relative;
+    right: 5%;
     width: 8%;
     height: 50%;
     border-radius: 15px;
@@ -133,14 +146,35 @@ nav button{
   
     background-color: #810000;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 75px;
+    min-height: 47px;
+
+    max-width: 151px;
+    max-height: 68px;
+
     
 }
+
+nav button > *{
+    width: 30%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100%;
+
+}
+
 .menu_logo_wrapper{
 
     left: 5%;
     z-index: 3;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     position: relative;
  
     display: flex;
@@ -325,11 +359,15 @@ nav button{
     width: 100%;
 }
 
-@media (width < 750px){
+@media (width < 1280px){
     .about .main img{
         margin-top: 50%;
         margin-bottom: 35px;
         max-width: 90%;
+    }
+
+    section{
+        min-height: 805px;
     }
 
     .all-rext h1{
@@ -368,6 +406,11 @@ display: none;
 }
 .menu_logo{
     display: block;
+}
+
+.menu_logo_wrapper{
+    width: 30px;
+    height: 30px;
 }
 
 .nav_wrapper{
@@ -440,54 +483,9 @@ display: none;
  
 }
 
-/*Phone Landscape*/
-
-@media  screen and (max-width: 767px) and (orientation:landscape){
-    /*Nav*/
-    nav{
-        height: 15%;
-    }
-    
-    nav button{
-        width: 10%;
-        border-radius: 10px;
-    }
-
-  
-
-    /*-----------*/
-
-    #cart{
-        right: 15%;
-        width: 4%;
-    }
-    .slideshow_wrapper{
-        margin-top: 10%;
-    }
- 
-
-    .review_wrapper{
-        height: 100%;
-    }
-    .review_box{
-       height: 100%;
-       width: 25%;
-    }
-
-    .review_content{
-        width: 90%;
-        
-    }
-
-    
-
-}
-
-
-
 /*Mobile view*/
 
-@media screen and (min-width: 768px) and  (max-width: 1024px)  {
+@media screen and (min-width: 768px) and  (max-width: 1280px)  {
    
    
     .review_box{
@@ -499,6 +497,10 @@ display: none;
         border-radius: 15px;
     }
     /*Nav*/
+    nav button{
+    width: 15%;
+}
+
 
 
 
@@ -512,6 +514,12 @@ display: none;
 .menu_logo{
     display: block;
 }
+
+.menu_logo_wrapper{
+    width: 30px;
+    height: 30px;
+}
+
 
 
 
@@ -578,45 +586,108 @@ display: none;
 
 }
 
-@media (width < 750px){
 
-    .section-container{
-        padding: 10rem 1rem 5rem 1rem;
-        text-align: center;
-        grid-template-columns: repeat(1, 1fr);
-    }
 
-    .image{
-        grid-area: 1/1/2/2;
-    }
 
-    .action-btn{
-        margin: auto;
-    }
-  }
- 
-  @media  screen and (max-width: 767px) and (orientation:portrait) {
 
-    #rightcontainer{
-        bottom: 4%;
-    }
-
-    #leftcontainer{
-        bottom: 4%;
-    }
-
-}
-
-@media  screen and (min-width: 768px) and (max-width: 1024px) and (orientation:portrait) {
+@media  screen and (max-width: 932px) and (orientation:landscape){
+    /*Nav*/
     
-    #rightcontainer{
-        bottom: 5%;
+    .choice{
+        margin: 2% 0 2% 0;
+    }
+    nav{
+        height: 20%;
+
     }
 
-    #leftcontainer{
-        bottom: 5%;
+    #nav_wrapper{
+        font-size: 100%;
     }
+    
+    nav button{
+        width: 15%;
+        border-radius: 10px;
+    }
+
+    .menu_logo_wrapper{
+        width: 30px;
+        height: 30px;
+    }
+
+    /*-----------*/
+
+   
+
+    .review_wrapper{
+        height: 100%;
+    }
+    .review_box{
+       height: 100%;
+       width: 50%;
+    }
+
+    .review_content{
+        width: 90%;
+        
+    }
+
+    .product{
+        height: 25%;
+    }
+
+    .product button{
+    
+   
+        width: 4.5%;
+       
+    }
+
+    .product button svg {
+      height: 100%;
+    }
+
+    .cart_container{
+        height: 80%;
+    }
+
+    .total_wrapper{
+        height: 10%;
+        bottom: 10%;
+    }
+    .button_wrapper{
+        height: 10%;
+    }
+
+    .button_wrapper button svg{
+      
+        left: 45.5%;
+     
+    }
+    
+    .button_wrapper button h4{
+       
+        left: 53.5%;
+        
+    }
+    
+    .main {
+       
+        margin-top: 50%;
+    }
+
+
+
+
+} 
+
+@media screen and (min-width: 933px) and  (max-width: 1280px)  and (orientation:landscape) {
+
+
+    
+
 
 }
+
 
 

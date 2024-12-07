@@ -33,12 +33,24 @@ nav{
     width: 100%;
     height: 10%;
     position: fixed;
-    z-index: 20;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #810000;
     box-shadow: 0 0 5px black;
+    min-height: 94px;
+}
+
+nav svg{
+    min-height: 22px;
+    min-width: 22px;
+}
+
+nav button{
+    min-height: 47px;
+    min-width: 75px;
+
 }
 
 .nav_dropdown{
@@ -133,8 +145,29 @@ nav button{
   
     background-color: #810000;
     cursor: pointer;
+
+       display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 75px;
+    min-height: 47px;
+
+    max-width: 151px;
+    max-height: 68px;
     
 }
+
+nav button > *{
+    width: 30%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100%;
+
+}
+
 .menu_logo_wrapper{
 
     left: 5%;
@@ -237,7 +270,8 @@ nav button{
     gap: 4rem;
     animation: transitionIn 0.60s;
     position: relative;
-    z-index: 10;
+    z-index: 0;
+    overflow: hidden;
 }
 
 .content{
@@ -339,21 +373,34 @@ nav button{
 
 .bg_wrapper{
     width: 100vw;
-    height: 100%;
+    height: 100vh;
     bottom: 0;
     overflow: hidden;
 
     opacity: 20%;
     position: fixed; 
+    z-index: -1;
 }
 
 #leftcontainer{
     position: absolute;
     width: 80%;
-    bottom: 15%;
+    bottom: 20%;
     z-index: 3;
     overflow: hidden;
+
 }
+
+#rightcontainer{
+    position: absolute;
+    width: 65%;
+    bottom: 20%;
+    z-index: 2;
+    right: 0;
+    overflow: hidden;
+    
+}
+
 
 #leftgrass{
     position: absolute;
@@ -361,15 +408,6 @@ nav button{
     bottom: 0;
     z-index: 4;
     overflow: hidden;
-}
-#rightcontainer{
-    position: absolute;
-    width: 65vw;
-    bottom: 15%;
-    z-index: 2;
-    right: 0;
-    overflow: hidden;
-    
 }
 
 #rightgrass{
@@ -385,6 +423,8 @@ nav button{
 
 #water{
     width: 100%;
+  
+
     position: absolute;
     bottom: 0;
     overflow: hidden;
@@ -398,7 +438,7 @@ nav button{
 }
 
 #Shrine{
-    width: 40%;
+    width: 30%;
     position: absolute;
     bottom: 0;
     left: 30%;
@@ -413,10 +453,11 @@ nav button{
 footer{
     margin-top: -30px;
     position: relative;
-    z-index: 10;
+    z-index: 0;
     font-weight: bold;
     font-family: "Open Sans", serif;
     color: #EEEBDD;
+    width: 100%;
 }
 
 .bottom-bar{
@@ -428,6 +469,12 @@ footer{
 
 
 @media screen and (max-width: 767px)  {
+
+    
+.image img{
+    width: min(20rem, 95%);
+ 
+}
 
 
 
@@ -509,67 +556,11 @@ display: none;
 }
 /*------------------*/
 
-.choice{
-    height: 5%;
-}
-
-#cart{
-    width: 7%;  
-    right: 30%;
-}
-  
-.cart_wrapper{
-    width: 50%;
-}
-
-.slideshow_wrapper{
-    margin-top: 20%;
-}
  
 }
 
 /*Phone Landscape*/
 
-@media  screen and (max-width: 767px) and (orientation:landscape){
-    /*Nav*/
-    nav{
-        height: 15%;
-    }
-    
-    nav button{
-        width: 10%;
-        border-radius: 10px;
-    }
-
-  
-
-    /*-----------*/
-
-    #cart{
-        right: 15%;
-        width: 4%;
-    }
-    .slideshow_wrapper{
-        margin-top: 10%;
-    }
- 
-
-    .review_wrapper{
-        height: 100%;
-    }
-    .review_box{
-       height: 100%;
-       width: 25%;
-    }
-
-    .review_content{
-        width: 90%;
-        
-    }
-
-    
-
-}
 
 
 
@@ -666,7 +657,7 @@ display: none;
 
 }
 
-@media (width < 750px){
+@media (width < 1280px){
 
     .section-container{
         padding: 10rem 1rem 5rem 1rem;
@@ -704,6 +695,95 @@ display: none;
     #leftcontainer{
         bottom: 5%;
     }
+
+}
+
+@media  screen and (max-width: 932px) and (orientation:landscape){
+
+    
+    .image img{
+        width: min(20rem, 95%);
+     
+    }
+
+    .choice{
+        margin: 2% 0 2% 0;
+    }
+    nav{
+        height: 20%;
+
+    }
+
+    #nav_wrapper{
+        font-size: 100%;
+    }
+    
+    nav button{
+        width: 15%;
+        border-radius: 10px;
+    }
+
+    .menu_logo_wrapper{
+        width: 30px;
+        height: 30px;
+    }
+
+    /*-----------*/
+
+   
+
+    .review_wrapper{
+        height: 100%;
+    }
+    .review_box{
+       height: 100%;
+       width: 50%;
+    }
+
+    .review_content{
+        width: 90%;
+        
+    }
+
+    .product{
+        height: 25%;
+    }
+
+    .product button{
+    
+   
+        width: 4.5%;
+       
+    }
+
+    .product button svg {
+      height: 100%;
+    }
+
+    .cart_container{
+        height: 80%;
+    }
+
+    .total_wrapper{
+        height: 10%;
+        bottom: 10%;
+    }
+    .button_wrapper{
+        height: 10%;
+    }
+
+    .button_wrapper button svg{
+      
+        left: 45.5%;
+     
+    }
+    
+    .button_wrapper button h4{
+       
+        left: 53.5%;
+        
+    }
+
 
 }
 

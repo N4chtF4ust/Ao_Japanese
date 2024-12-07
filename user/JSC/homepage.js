@@ -36,5 +36,5 @@ window.addEventListener('scroll', () => {
   rightcontainer.style.right = value * -.03 + 'vh';
   rightgrass.style.bottom = value * -.03 + '%';
   leftgrass.style.bottom = value * -.03 + '%';
-  water.style.bottom = value * -.01 + '%';
+  //water.style.bottom = value * -.01 + '%';
 });

@@ -26,6 +26,7 @@ body{
 }
 
 /*Navigation*/
+
 nav{
     background-color:var(--nav-header--);
     width: 100%;
@@ -37,6 +38,19 @@ nav{
     align-items: center;
     color: #810000;
     box-shadow: 0 0 5px black;
+    min-height: 94px;
+
+}
+
+nav svg{
+    min-height: 22px;
+    min-width: 22px;
+}
+
+nav button{
+    min-height: 47px;
+    min-width: 75px;
+
 }
 
 .logo_wrapper{
@@ -57,21 +71,42 @@ nav{
 
 nav button{
     
-   margin-right: 3%;
-    width: 8%;
-    height: 50%;
-    border-radius: 15px;
-    border: none;
-    font-family: "Open Sans", sans-serif;
-    font-weight: bolder;
-    color: var(--nav-header--);
-    font-size: 2vmin;
-    text-wrap: nowrap;
-  
-    background-color: #810000;
-    cursor: pointer;
-    
-}
+     margin-right: 3%;
+     width: 8%;
+     height: 50%;
+     border-radius: 15px;
+     border: none;
+     font-family: "Open Sans", sans-serif;
+     font-weight: bolder;
+     color: var(--nav-header--);
+     font-size: 2vmin;
+     text-wrap: nowrap;
+   
+     background-color: #810000;
+     cursor: pointer;
+ 
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ 
+     min-width: 75px;
+     min-height: 47px;
+ 
+     max-width: 151px;
+     max-height: 68px;
+     
+ }
+ 
+ nav button > *{
+     width: 30%;
+     height: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 100%;
+ 
+ }
+ 
 .menu_logo_wrapper{
     top: 3%;
     left: 5%;
@@ -172,6 +207,7 @@ nav button{
 .container_wrapper{
     width: 100%;
     height: 90%;
+
     background-color:var(--nav-header--);
     position: absolute;
     bottom: 0;
@@ -261,7 +297,7 @@ nav button{
     background-image: url(/Ao_japanese/user/CSS/contact-assets/send.svg);
     background-repeat: no-repeat;
     background-position:calc(15%);
-    background-size: 15%;
+    background-size: 15px;
     color: #EEEBDD;
     padding-left: 2.5%;
     font-weight: bolder ;
@@ -306,7 +342,6 @@ nav button{
 }
 
 .social_svg{
-
     width: 20%;
     height: 40%;
     display: flex;
@@ -323,6 +358,7 @@ body{
 
 .container_wrapper{
     height: 100%;
+    min-height: 1334px;
     display: grid;
     place-content: center;
     place-items: center;
@@ -339,8 +375,9 @@ body{
 
 #contact_form input[type="submit"]{
   width: 35%;
- padding-left: 5%;
+  padding-left: 5%;
   font-size: 85%;
+  min-width: 32px;
 }
 
 .right_container{
@@ -415,50 +452,10 @@ display: none;
 /*------------------*/
 }
 
-/*Mobile view landscape*/
-@media  screen and (max-width: 767px) and (orientation:landscape){
 
-/*Nav*/
-    nav{
-            height: 15%;
-      
-        }
-        
-    nav button{
-            width: 10%;
-            border-radius: 10px;
-        }
-        /*-----------*/
-    .right_container form {
-        width: 50%;
-      
-    }
-    .social{
-        height: 15%;
-    }
-
-    .social h3{
-        font-size: 4vh;  
-    }
-
-    #contact_form input[type="submit"]{
-        width: 30%;
-
-       
-        font-size: 90%;
-        padding-top: 5%;
-        padding-bottom: 12%;
-      }
-
-      .menu_logo_wrapper{
-        width: 25px;
-        height: 25px;
-       }
-
-}
 
 /* Tablets (601px to 992px) */
-@media  screen and (min-width: 768px) and (max-width: 1024px)   {
+@media  screen and (min-width: 768px) and (max-width: 1280px)   {
   
     body{
         height: 200vh;
@@ -496,7 +493,11 @@ display: none;
     }
       /*Nav*/
 
-
+      nav button{
+        width: 15%;
+     
+       
+    }
 
 
 
@@ -571,6 +572,56 @@ display: none;
    
    }
 
+   @media  screen and (max-width: 932px) and (orientation:landscape){
+    #contact_form input[type="submit"]{
+        width: 20%;
+        
+    }
+
+    .choice{
+        margin: 2% 0 2% 0;
+    }
+    nav{
+        height: 20%;
+
+    }
+
+    #nav_wrapper{
+        font-size: 100%;
+    }
+    
+    nav button{
+        width: 15%;
+        border-radius: 10px;
+    }
+
+    .menu_logo_wrapper{
+        width: 30px;
+        height: 30px;
+    }
+
+
+}
+
+@media screen and (min-width: 933px) and  (max-width: 1280px)  and (orientation:landscape) {
+
+
+    .cart_icon_wrapper{
+        width: 5%;
+    }
+  
+    #contact_form input[type="submit"]{
+        width: 13%;
+     
+        background-size: 12px;
+        
+    }
+
+
+}
+
+   /*
+
    @media  screen and (min-width: 768px) and (max-width: 1024px)  and  (orientation:landscape) {
 
     
@@ -598,5 +649,7 @@ display: none;
       }
   
    }
+
+   */
 
 
