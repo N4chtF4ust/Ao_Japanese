@@ -5,9 +5,11 @@
 
     include 'product_admin.php';
 
-   
+
 
     $productList_edit = $_SESSION['productList'];
+
+
 
 
     foreach ($productList_edit as $key => $value) {

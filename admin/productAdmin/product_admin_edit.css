@@ -170,6 +170,66 @@ form img{
         width: 100%;
     }
 
+    .img_wrapper{
+        width: 100%;
+
+    }
+
+    .img_wrapper img{
+        height: 30%;
+
+    }
+
+
+}
+
+
+@media screen and (min-width: 768px) and  (max-width: 1280px)  {
+
+    .edit_wrapper {
+        transform: translate(85%,50%);
+    }
+
+    .edit_wrapper form{
+        width: 100%;
+    }
+
+    .img_wrapper{
+        width: 100%;
+
+    }
+
+    .img_wrapper img{
+        height: 30%;
+
+    }
+
+
+}
+
+
+@media screen and (max-width: 932px) and (orientation:landscape){
+
+    .edit_wrapper {
+        transform: translate(85%,50%);
+       
+    }
+
+    .edit_wrapper form{
+        width: 100%;
+       min-height: 330px;
+    }
+
+    .img_wrapper{
+        width: 100%;
+
+    }
+
+    .img_wrapper img{
+        height: 30%;
+
+    }
+
 
 }
 

@@ -151,89 +151,16 @@ for ($i=1; $i <=10 ; $i++) {
   //to make the table realtime from databse
   //Table1
   function table(){
-  const table1 = new XMLHttpRequest();
-  table1.onload = function(){ 
-    document.getElementById("choice_content_wrapper1").innerHTML = this.responseText;
+    
+  for (let i = 1; i <= 10; i++) {
+  const xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    document.getElementById(`choice_content_wrapper${i}`).innerHTML = this.responseText;
+  };
+  xhr.open("POST", `content_product_table/table${i}.php`, true);
+  xhr.send();
   }
-  table1.open("POST","content_product_table/table1.php",true);
-  table1.send();
-  
 
-  //Table2
-  const table2 = new XMLHttpRequest();
-  table2.onload = function(){  
-    document.getElementById("choice_content_wrapper2").innerHTML = this.responseText;  
-  }
-  table2.open("POST","content_product_table/table2.php",true);
-  table2.send();
-
-  
-  //Table3
-  const table3 = new XMLHttpRequest();
-  table3.onload = function(){  
-    document.getElementById("choice_content_wrapper3").innerHTML = this.responseText;  
-  }
-  table3.open("POST","content_product_table/table3.php",true);
-  table3.send();
-
-//Table4
-    const table4 = new XMLHttpRequest();
-  table4.onload = function(){  
-    document.getElementById("choice_content_wrapper4").innerHTML = this.responseText;  
-  }
-  table4.open("POST","content_product_table/table4.php",true);
-  table4.send();
-
-//Table5
-const table5 = new XMLHttpRequest();
-  table5.onload = function(){  
-    document.getElementById("choice_content_wrapper5").innerHTML = this.responseText;  
-  }
-  table5.open("POST","content_product_table/table5.php",true);
-  table5.send();
-
-//Table6
-const table6 = new XMLHttpRequest();
-  table6.onload = function(){  
-    document.getElementById("choice_content_wrapper6").innerHTML = this.responseText;  
-  }
-  table6.open("POST","content_product_table/table6.php",true);
-  table6.send();
-
-//Table7
-const table7 = new XMLHttpRequest();
-  table7.onload = function(){  
-    document.getElementById("choice_content_wrapper7").innerHTML = this.responseText;  
-  }
-  table7.open("POST","content_product_table/table7.php",true);
-  table7.send();
-
-  //Table8
-const table8 = new XMLHttpRequest();
-  table8.onload = function(){  
-    document.getElementById("choice_content_wrapper8").innerHTML = this.responseText;  
-  }
-  table8.open("POST","content_product_table/table8.php",true);
-  table8.send();
-
-  //Table9
-  const table9 = new XMLHttpRequest();
-  table9.onload = function(){  
-    document.getElementById("choice_content_wrapper9").innerHTML = this.responseText;  
-  }
-  table9.open("POST","content_product_table/table9.php",true);
-  table9.send();
-
-    //Table10
-    const table10 = new XMLHttpRequest();
-  table10.onload = function(){  
-    document.getElementById("choice_content_wrapper10").innerHTML = this.responseText;  
-  }
-  table10.open("POST","content_product_table/table10.php",true);
-  table10.send();
-
-
- 
 //For Cart
   const xhttp2 = new XMLHttpRequest();
   xhttp2.onload = function(){

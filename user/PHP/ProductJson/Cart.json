@@ -92,13 +92,29 @@
         }
     },
     "13": {
-        "choice1_13": {
+        "choice1_20": {
             "TABLE": "choice1",
-            "PRODUCT_ID": 13,
+            "PRODUCT_ID": 20,
             "IMG_FILENAME": "chicken-katsudon-removebg-preview.png",
-            "PRODUCT": "100",
+            "PRODUCT": "123",
             "QUANTITY": 1,
-            "PRICE": 100
+            "PRICE": 123
+        },
+        "choice1_18": {
+            "TABLE": "choice1",
+            "PRODUCT_ID": 18,
+            "IMG_FILENAME": "chicken-katsudon-removebg-preview.png",
+            "PRODUCT": "123",
+            "QUANTITY": 1,
+            "PRICE": 123
+        },
+        "choice10_4": {
+            "TABLE": "choice10",
+            "PRODUCT_ID": 4,
+            "IMG_FILENAME": "chicken-katsudon-removebg-preview.png",
+            "PRODUCT": "123",
+            "QUANTITY": 4,
+            "PRICE": 492
         }
     },
     "14": {
@@ -107,7 +123,7 @@
             "PRODUCT_ID": 13,
             "IMG_FILENAME": "chicken-katsudon-removebg-preview.png",
             "PRODUCT": "100",
-            "QUANTITY": 2,
+            "QUANTITY": 1,
             "PRICE": 100
         }
     },
@@ -198,13 +214,13 @@
         }
     },
     "10": {
-        "choice1_13": {
+        "choice1_17": {
             "TABLE": "choice1",
-            "PRODUCT_ID": 13,
+            "PRODUCT_ID": 17,
             "IMG_FILENAME": "257573165_281372280427010_6916578788075129514_n.jpg",
-            "PRODUCT": "robert",
-            "QUANTITY": 5,
-            "PRICE": 123
+            "PRODUCT": "123123",
+            "QUANTITY": 1,
+            "PRICE": 123123
         }
     },
     "11": []

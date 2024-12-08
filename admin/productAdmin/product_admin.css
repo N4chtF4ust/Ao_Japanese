@@ -609,12 +609,12 @@ table img{
         height: 50%;
      }
 
-     table tr td form  button{
+    .button button{
 
         min-height: 50%;
-        border-radius: 1px;
-   
-       }
+        border-radius: 5px;
+    
+    }
 }
 
 @media screen and (min-width: 933px) and  (max-width: 1280px)  and (orientation:landscape) {
