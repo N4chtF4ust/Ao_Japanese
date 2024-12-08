@@ -252,7 +252,7 @@
     <nav >
 
         <div class="logo_wrapper">
-            <img src="..\assets\logo_processed.png" alt="AoLogo">
+            <img src="../assets/logo_processed.png" alt="AoLogo">
         </div>
 
 
@@ -319,7 +319,7 @@
         <div class="content_wrapper">
 
 
-            <form action="" method="post" enctype="multipart/form-data">
+            <form id="form_add" action="" method="post" enctype="multipart/form-data">
 
                 <div class="productname_wrapper">
                     <label for="product_name">Product Name:</label>

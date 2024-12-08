@@ -13,7 +13,7 @@ if ($result->num_rows>0) {
         $price = $row["price"];
         $fileName = $row["img"];
         $availability = $row["availability"];
-        $imageUrl =  "/Ao/admin/assets/uploaded_img/$fileName";
+        $imageUrl = "/Ao_Japanese/admin/assets/uploaded_img/$fileName";
 
         $IsItAvailable = ($availability === "Available")?True:False;
 

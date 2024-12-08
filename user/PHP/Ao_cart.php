@@ -127,7 +127,7 @@ if (isset($user[$userId])) {
 
     <div class="img_cart_wrapper">
       <!-- Set the image source dynamically -->
-      <img src="/Ao/admin/assets/uploaded_img/<?php img_path($cartItems["TABLE"],$cartItems["PRODUCT_ID"],$conn); ?>" alt="<?php  product_name($cartItems["TABLE"],$cartItems["PRODUCT_ID"],$conn); ?>">
+      <img src="/Ao_Japanese/admin/assets/uploaded_img/<?php img_path($cartItems["TABLE"],$cartItems["PRODUCT_ID"],$conn); ?>" alt="<?php  product_name($cartItems["TABLE"],$cartItems["PRODUCT_ID"],$conn); ?>">
     </div>
     
     <div class="product_name_wrapper">

@@ -2,6 +2,6 @@
        "path1":"../accountsAdmin/accounts_admin.php",
        "path2":"../productAdmin/product_admin.php",
        "path3":"../staffsAdmin/staffs.php",
-       "path4":"../transactionsAdmin/transactions_admin.html",
+       "path4":"../transactionsAdmin/transactions_admin.php",
        "path5":"../settingsAdmin/welcome.php"
 }

@@ -58,8 +58,14 @@ nav > div:not(:first-child){
 
 }
 
+nav > div:not(:first-child,:last-child){
+   
+    cursor: pointer;
+ 
+ }
+
 nav > div:not(:first-child) > svg{
-    width: 20%;
+    width: 15%;
     padding: 2%;
 
 }
@@ -73,14 +79,13 @@ nav > div:not(:first-child) > h1{
     width: 65%;
 }
 
-nav > div:not(:first-child,:last-child):active{  
+nav > div:not(:first-child,:last-child,:nth-child(3)):hover{  
   background-color: var(--table-td-bg-color--);
 }
 
-
 nav > :last-child button{
 
-   width: 50%;
+   width: 70%;
    height: 80%;
    border-radius: 30px;
    border: none;
@@ -92,6 +97,7 @@ nav > :last-child button{
    display: flex;
    justify-content: center;
    align-items: center;
+   cursor: pointer;
 }
 
 nav > :last-child button > svg{
@@ -102,13 +108,11 @@ nav > :last-child button > svg{
 nav > :last-child button:active{
     background-color:var(--nav-bg-color--) ;
     color: var(--nav-button-bgcolor--);
-    outline: 1px solid var(--nav-button-bgcolor--);
-    
-    
+    outline: 1px solid var(--nav-button-bgcolor--);   
  }
 
 .logo_wrapper img{
-    width: 50%;
+    height: 50%;
 }
 
 
@@ -141,11 +145,12 @@ main{
     
 
      height: 60%;
-     width: 10%;
+     width: 20%;
      text-align: justify;
-     padding-left: 1%;
+   
+ 
      font-weight: bolder;
-     margin-left: 1%;
+  
     
      border-color:  var(--nav-button-bgcolor--);
      
@@ -442,19 +447,18 @@ table img{
     }
     
     nav > :first-child{
-        background-color: aqua;
+        
         height: 10%;
     }
 
     nav h1{
         font-size: 80%;
     }
-    nav > :last-child button{
+    nav > div:last-child button{
         width: 80%;
-        height: 50%;
+        height: 60%;
+        font-size: 10%;
      }
-
-
 
      .page_title h1{
         font-size: 100%;
@@ -479,19 +483,21 @@ table img{
         font-size: 10px;
     }
 
-    table tr td  button{
-        
-  
-        font-size: 50%;
-       
-    
+
+    table tr td form  button{
+     min-width: 30px;
+     min-height: 20px;
+
     }
 
     .button button{
-        border-radius: 1px;
+        border-radius: 2px;
         font-size: 50%;
-        
        
+    }
+
+    .choice select{
+        width: 40%;
     }
 }
 
@@ -502,14 +508,14 @@ table img{
 @media screen and (min-width: 768px) and  (max-width: 1280px)   {
 
     nav{
-        width: 40%;
+        width: 20%;
     }
 
     nav h1{
         font-size: 100%;
     }
-    nav > :last-child button{
-        width: 80%;
+    nav > div:last-child button{
+        width: 50%;
         height: 50%;
      }
 
@@ -535,23 +541,111 @@ table img{
         font-size: 10px;
     }
 
+    table tr td form  button{
+        min-height: 50%;
+        border-radius: 1px;   
+    }
+
     .button button{
         border-radius: 15px;
         font-size: 70%;
         height: 15%;
     }
+
+    #form_add{
+ 
+        min-height: 600px;
+    }
+
+    .content_wrapper form > div{
+        height: 15%;
+    }
 }
 
 /* Tablet landscape*/
-@media screen and (min-width: 932px) and (orientation:landscape){
+@media screen and (max-width: 932px) and (orientation:landscape){
 
-    nav > :first-child img{
-        width: 10%;
-        background-color: #810000;
+    nav{
+        width: 20%;
+   
+    }
+
+    nav > :first-child {
+     height: 20%;
+ 
+    }
+
+    nav > div:last-child button{
+        width: 40%;
+     
+   
+     }
+    
+
+    #form_add{
+ 
+        min-height: 600px;
+    }
+
+    .content_wrapper form > div{
+        height: 15%;
+    }
+
+    .content_wrapper form > div > input{
+      padding: 1%;
+    }
+
+    .content_wrapper form > div:last-child{
+ 
+        height: 10%;
+    }
+
+    .content_wrapper form input,.content_wrapper form select{
+        padding: 1%;
     }
 
     nav > :last-child button{
         width: 80%;
         height: 50%;
      }
+
+     table tr td form  button{
+
+        min-height: 50%;
+        border-radius: 1px;
+   
+       }
+}
+
+@media screen and (min-width: 933px) and  (max-width: 1280px)  and (orientation:landscape) {
+
+    nav > div:last-child button{
+        width: 40%;
+    }
+
+    nav > div:not(:first-child,:last-child) svg{
+        width: 10%;
+    }
+
+    .content_wrapper form > div{
+        height: 15%;
+    }
+
+    .content_wrapper form > div > input{
+      padding: 1%;
+    }
+
+    .content_wrapper form > div:last-child{
+ 
+        height: 10%;
+    }
+
+    .content_wrapper form input,.content_wrapper form select{
+        padding: 1%;
+    }
+
+
+    
+
+
 }

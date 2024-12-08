@@ -12,6 +12,7 @@
 :root{
     --nav-bg-color--:#EEEBDD;
     --nav-button-bgcolor--:#810000;;
+    --table-td-bg-color--:#dbdad2;
 }
 
 body{
@@ -23,56 +24,84 @@ body{
     
 }
 
+
 nav{
     
     height: 100%;
-    width: 20%;
+    width: 10%;
     background-color: var(--nav-bg-color--);
     overflow: hidden;
 
 }
 
 nav > div{
-    display: grid;
+    display: flex;
     
-    place-items: center;   
-    border: 1px solid var(--nav-button-bgcolor--);
+   justify-content: center;
+   align-items: center;
+ 
 }
 
 nav > :first-child{
     width: 100%;
-    height: 22%;
+    height: 12%;
    
 
 }
+
 nav > div:not(:first-child){
-   
-    height: 13%;
+    height: 5%;
     width: 100%;
     color: var(--nav-button-bgcolor--);
-    
+    display: flex;
+    font-size: 50%;
 }
 
-nav > div:not(:first-child,:last-child):active{
+nav > div:not(:first-child,:last-child){
    
-  background-color: var(--nav-button-bgcolor--);
-  color: var(--nav-bg-color--);
-    
+   cursor: pointer;
+
 }
 
+nav > div:not(:first-child) > svg{
+    width: 15%;
+    padding: 2%;
+
+}
+
+nav > div:nth-child(2){
+    background-color: var(--nav-button-bgcolor--);
+    color: var(--nav-bg-color--);
+}
+
+nav > div:not(:first-child) > h1{
+    width: 65%;
+}
+
+nav > div:not(:first-child,:last-child,:nth-child(2)):hover{  
+    background-color: var(--table-td-bg-color--);
+  }
 
 nav > :last-child button{
 
-   width: 40%;
-   height: 50%;
+   width: 70%;
+   height: 80%;
    border-radius: 30px;
    border: none;
    background-color:var(--nav-button-bgcolor--) ;
    color: var(--nav-bg-color--);
    font-family: "Open Sans", sans-serif;
    font-weight: bolder;
-   
-    
+   font-size: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+}
+
+nav > :last-child button > svg{
+
+    width: 30%;
 }
 
 nav > :last-child button:active{
@@ -84,18 +113,20 @@ nav > :last-child button:active{
  }
 
 .logo_wrapper img{
-    width: 50%;
+    height: 50%;
 }
+
+/*-----------*/
 
 
 main{
     background-color: var(--nav-bg-color--);
-    width: 80%;
+    width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;
     
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .page_title{
@@ -114,53 +145,6 @@ main{
 
 }
 
-.content_wrapper form{
-    width: 100%;
-    display: flex;
-   
- 
-    justify-content: space-evenly;
-    align-items: center;
-    height: 10%;
-    
-
-}
-
-.content_wrapper form input{
-    outline: none;
-    border: none;
-  
-}
-
-.content_wrapper form > div{
-    width: 18%;
-    height: 80%;
-    display: flex;
-    justify-content: center; 
-    flex-direction: column;
-    background-color: var(--nav-button-bgcolor--);
-    color: var(--nav-bg-color--);
-    padding: 1%;
-}
-
-.content_wrapper form > div:last-child{
-    justify-content: center;
-    background-color:transparent;
-}
-
-.content_wrapper form > div label{
-    font-size: 100%
-}
-
-.content_wrapper form > div input[type="submit"]{
-    height: 100%;
-    width: 100%;
-    border-radius: 30px;
-    padding: 0;
-    margin: 0;
-    background-color: var(--nav-button-bgcolor--);
-    color: var(--nav-bg-color--);
-}
 
 table {
     width: 100%;
@@ -180,91 +164,52 @@ table tr td{
 
 
 
-table tr td form  button{
-    width: 80%;
-    font-size: 100%;
-    height: 20%;
-    background-color: var(--nav-button-bgcolor--);
-    color: var(--nav-bg-color--);
-    border: none;
-    border-radius: 10px;
-
-}
-
-
-
-#edit > div{
-    width: 80%;
-
-}
-
 
 
 /* Phone*/
 
 @media screen and (max-width: 767px) {
-
     nav{
-        width: 40%;
+        width: 20%;
+   
+    }
+    
+    nav > :first-child{
+        
+        height: 10%;
     }
 
     nav h1{
         font-size: 80%;
     }
-    nav > :last-child button{
+    nav > div:last-child button{
         width: 80%;
-        height: 50%;
+        height: 60%;
+        font-size: 10%;
      }
 
      .page_title h1{
         font-size: 100%;
      }
 
-     .content_wrapper form{
-        flex-direction: column;
-        height: 50%;
-     }
 
-     .content_wrapper form > div{
-        width: 80%;
-        height: 15%;
-        border-radius: 3px;
-     }
 
-     .content_wrapper form > div label{
-        font-size: 80%
-    }
-    table{
-        font-size: 10px;
-    }
 
 }
 
-/* Phone landscape*/
 
-@media screen and (max-width: 767px) and (orientation:landscape){
-
-nav > :first-child img{
-    width: 30%;
-}
-
-.content_wrapper form{
-   
-    height: 80%;
-}
-}
 /* Tablet*/
-@media screen and (min-width: 768px) and  (max-width: 1024px)   {
+@media screen and (min-width: 768px) and  (max-width: 1280px)   {
 
     nav{
-        width: 40%;
+        width: 20%;
     }
 
     nav h1{
         font-size: 100%;
     }
-    nav > :last-child button{
-        width: 80%;
+    nav > div:last-child button{
+        width: 50%;
         height: 50%;
      }
 
@@ -272,34 +217,38 @@ nav > :first-child img{
         font-size: 100%;
      }
 
-     .content_wrapper form{
-        flex-direction: column;
-        height: 50%;
-     }
-
-     .content_wrapper form > div{
-        width: 80%;
-        height: 15%;
-        border-radius: 3px;
-     }
-
-     .content_wrapper form > div label{
-        font-size: 80%
-    }
-    table{
-        font-size: 10px;
-    }
 }
 
-/* Tablet landscape*/
-@media screen and (min-width: 768px) and  (max-width: 1024px) and (orientation:landscape){
+@media screen and (max-width: 932px) and (orientation:landscape){
 
-    nav > :first-child img{
+    nav{
         width: 20%;
+   
     }
 
-    nav > :last-child button{
-        width: 80%;
-        height: 50%;
-     }
+    nav > :first-child {
+     height: 20%;
+ 
     }
+
+    nav > div:last-child button{
+        width: 40%;
+     
+   
+     }
+    
+}
+
+@media screen and (min-width: 933px) and  (max-width: 1280px)  and (orientation:landscape) {
+
+    nav > div:last-child button{
+    width: 40%;
+    }
+
+    nav > div:not(:first-child,:last-child) svg{
+        width: 10%;
+    }
+
+}
+
+

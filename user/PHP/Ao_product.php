@@ -250,17 +250,6 @@ function testing(product_id,product_name,price,fileName,table){
     var username = <?php echo json_encode($username); ?>;
     var quantity = 1;
 
-   // Log the values to the console
-   // console.log('The button working');
-   // console.log('USER ID: ' + userId);
-   // console.log('USERNAME: ' + username);
-   // console.log('PRODUCT ID: ' + product_id);
-   // console.log('PRODUCT NAME: ' + product_name);
-   // console.log('PRICE: ' + price);
-   // console.log('IMG FILE NAME: ' + fileName);
-   // console.log('     ');
-    // Define the URL of the JSON data
-
     let CartInfo = {
     
           USER_ID: userId,
@@ -295,9 +284,7 @@ function testing(product_id,product_name,price,fileName,table){
    function delete_product(delete_userid,delete_table,delete_product_id){
 
    console.log("The delete button is working");
- //  console.log(delete_userid);
- //  console.log(delete_table);
- //  console.log(delete_product_id);
+
 
    let Delete_info = {
     
@@ -320,8 +307,6 @@ function testing(product_id,product_name,price,fileName,table){
       console.log(data);
       
     })*/
-
-
    }
 
    function deduct_product(deduct_userid,deduct_table,deduct_product_id){
@@ -350,10 +335,7 @@ function testing(product_id,product_name,price,fileName,table){
       
     })
 
-
-
    }
-
 
    function add_product(add_userid,add_table,add_product_id){
     
@@ -364,7 +346,6 @@ function testing(product_id,product_name,price,fileName,table){
     USER_ID: add_userid,
     TABLE: add_table,
     PRODUCT_ID: add_product_id
- 
    }
 
    fetch("AddToCart/AddQuantity.php", {  // This fetches the same page
@@ -380,11 +361,7 @@ function testing(product_id,product_name,price,fileName,table){
       console.log(data);
       
     })
- 
-
- 
- 
-    }
+ }
 
    
 
