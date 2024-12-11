@@ -118,9 +118,6 @@ if (isset($user[$userId])) {
     // Loop through the cart items for this user
     foreach ($user[$userId] as $cartItems) {
         // Loop through the individual items in the cart
-
-       
-    
 ?>
 
 <div class="product">
