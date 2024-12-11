@@ -9,7 +9,7 @@
 </head>
 
 
-<body>
+<body  onload="table();">
     <nav >
     
     <div class="logo_wrapper">
@@ -72,20 +72,206 @@
     
 
     <main>
+
         <div class="page_title">
             <h1>Transactions</h1>
-
         </div>
 
         <div class="content_wrapper">
-           
+
+             <div class="To_Prepare">
+     
+                <h3>To Prepare</h3>
+      
+                <div class="To_Prepare_Ajax">
+        
+                </div>
+
+             </div>
+
+            <div class="Recieved">
+
+              <h3>To Recieve</h3>
+
+              <div class="Recieve_Ajax">
+        
+              </div>
+              
+            </div>
+
+        <div class="Done">
+
+
+    
+        <h3>Done</h3>
+        <div class="Done_Ajax">
+        
+        </div>
+
+
+    
+
+    </div>
+
+  
+</div>
 
         </div>
 
+        <div class="SetStatus" id="SetStatus">
+       <h2>  <p> CustomerID: <span>1</span> </p></h2>
+       <h3>  <p> Name: <span>Robert</span> </p></h3>         
+       <h3><p>Status: <span>?</span></p></h3>
+
+       <section>
+
+       <select name="status" id="status">
+        <option value="" disabled selected>--select--</option>
+        <option value="None">None</option>
+        <option value="waiting">Waiting</option>
+        <option value="to-receive" >To Receive</option>
+       </select>
+
+       <div class="button_wrapper">
+       <button >Save</button>
+       <button onclick="SetStatusClose(document.getElementById('SetStatus'))">Close</button>
+
+
+       </div>
+      
       
 
+
+       </section>
+
+        </div>
+
+  
+
     </main>
-    
+
+   
+
+
+  
+    <script>
+
+function table(){
+
+  //Table 1
+
+  const xhr = new XMLHttpRequest();
+xhr.onload = function () {
+  document.getElementsByClassName('To_Prepare_Ajax')[0].innerHTML = this.responseText;
+};
+xhr.open("POST", 'To_Prepare_Ajax.php', true);
+xhr.send();
+
+const xhr2 = new XMLHttpRequest();
+xhr2.onload = function () {
+  document.getElementsByClassName('Recieve_Ajax')[0].innerHTML = this.responseText;
+};
+xhr2.open("POST", 'Recieve_Ajax.php', true);
+xhr2.send();
+  
+
+
+  const xhr3 = new XMLHttpRequest();
+xhr3.onload = function () {
+  document.getElementsByClassName('Done_Ajax')[0].innerHTML = this.responseText;
+};
+xhr3.open("POST", 'Done_Ajax.php', true);
+xhr3.send();
+
+  
+
+}
+
+
+setInterval(function(){table();}, 1000);
+
+function SetStatus(element){
+    element.style.display = 'flex';
+}
+
+function SetStatusClose(element){     
+    element.style.display = 'none';           
+}
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const draggable = document.getElementById('SetStatus');
+
+  let offsetX = 0;
+  let offsetY = 0;
+  let isDragging = false;
+
+  // Ensure the element is absolutely positioned
+  draggable.style.position = 'absolute';
+
+  // Function to handle drag start (common for mouse and touch)
+  function startDrag(event) {
+   // event.preventDefault(); // Prevent default behavior (e.g., text selection)
+
+    isDragging = true;
+
+    const clientX = event.type === 'touchstart' ? event.touches[0].clientX : event.clientX;
+    const clientY = event.type === 'touchstart' ? event.touches[0].clientY : event.clientY;
+
+    offsetX = clientX - draggable.offsetLeft;
+    offsetY = clientY - draggable.offsetTop;
+  }
+
+  // Function to handle dragging (common for mouse and touch)
+  function drag(event) {
+    if (!isDragging) return;
+
+    // Prevent scrolling when dragging on mobile
+    event.preventDefault();
+
+    const clientX = event.type === 'touchmove' ? event.touches[0].clientX : event.clientX;
+    const clientY = event.type === 'touchmove' ? event.touches[0].clientY : event.clientY;
+
+    draggable.style.left = `${clientX - offsetX}px`;
+    draggable.style.top = `${clientY - offsetY}px`;
+  }
+
+  // Function to handle drag end
+  function endDrag() {
+    isDragging = false;
+  }
+
+  // Event listeners for mouse
+  draggable.addEventListener('mousedown', startDrag);
+  document.addEventListener('mousemove', drag);
+  document.addEventListener('mouseup', endDrag);
+
+  // Event listeners for touch
+  draggable.addEventListener('touchstart', startDrag);
+  document.addEventListener('touchmove', drag);
+  document.addEventListener('touchend', endDrag);
+});
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+  
+
+
+  
+
+</script>
+
     
     
     

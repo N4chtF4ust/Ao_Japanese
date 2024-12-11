@@ -20,8 +20,11 @@ body{
     width: 100vw;
     display: flex;
     font-family: "Open Sans", sans-serif;
+    overflow: hidden;
+
   
 }
+
 
 
 nav{
@@ -119,12 +122,13 @@ nav > :last-child button:active{
 main{
     background-color: var(--nav-bg-color--);
     width: 90%;
-    height: 100%;
+ 
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    box-sizing: border-box;
     
  
-    overflow-x: hidden;
 }
 
 .page_title{
@@ -138,8 +142,250 @@ main{
 .content_wrapper{
     height: 95%;
     width: 100%;
+    background-color: aqua;
+    display: flex;
 
 }
+
+.To_Prepare{
+    background-color: pink;
+    width:33.33%;
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    overflow-y: auto;
+}
+
+.To_Prepare h3{
+
+    background-color: yellow;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+}
+
+.To_Prepare_Ajax{
+    background-color: aquamarine;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+
+
+table{
+    position: relative;
+    width: 90%;
+    height: 30%;
+    text-wrap: nowrap;
+    font-size: 1rem;
+    text-align: center;
+
+    border-color: black; 
+    color: var(--nav-button-bgcolor--);
+    position:  relative;
+    background-color: var(--nav-bg-color--);
+}
+
+table tr th{
+    background-color: var(--table-td-bg-color--);
+    color: var(--nav-button-bgcolor--);
+    padding: 1%;
+    width: 25%;
+
+}
+
+
+
+
+table tr:first-child th:first-child{
+    background-color:var(--nav-button-bgcolor--);
+    color: var(--nav-bg-color--);   
+}
+
+table tr td{
+    background-color:var(--table-td-bg-color--);
+    padding: 1%;
+   
+}
+
+ table tbody tr td img{
+    height: 5rem;
+    
+}
+
+table tbody tr td button{
+  border: none;
+  background-color: var(--nav-button-bgcolor--);
+  color: var(--nav-bg-color--);
+  padding: 3%;
+  margin: 3%;
+  cursor: pointer;   
+}
+
+table tbody tr td button:active{
+    outline: 1px solid var(--nav-button-bgcolor--);
+    color: var(--nav-button-bgcolor--);
+    background-color: var(--nav-bg-color--);
+}
+
+table tbody tr td select{
+
+   padding-top: 3%;
+   padding-bottom: 3%;
+}
+.Recieved{
+    background-color: pink;
+    width:33.33%;
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    overflow-y: auto;
+}
+
+
+.Recieved h3{
+  
+    background-color: forestgreen;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+}
+
+.Recieve_Ajax{
+    background-color: azure;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+
+
+.Done{
+    background-color: pink;
+    width:33.33%;
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    overflow-y: auto;
+}
+
+
+.Done h3{
+  
+    background-color: lightblue;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+}
+
+.Done_Ajax{
+    background-color: aquamarine;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.SetStatus{
+    background-color: aqua;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    transform: translate(60%,50%);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+
+    cursor: grab;
+
+
+    border-radius: 8px;
+    transition: transform 0.1s ease;
+
+}
+
+.SetStatus:active{
+    cursor: grabbing;
+
+
+}
+
+.SetStatus h2{
+    display: grid;
+    place-items: center;
+    height: 10%;
+    width: 100%;
+    background-color: lightblue;
+}
+
+.SetStatus h3{
+    display: grid;
+    place-items: center;
+  
+    height: 10%;
+    width: 100%;
+    background-color: lightcoral;
+}
+
+.SetStatus section{
+    height: 80%;
+    width: 40%;
+    background-color: lightgreen;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.SetStatus section select{
+    padding: 3%;
+}
+
+.SetStatus section button{
+    padding: 3%;
+    background-color: var(--nav-button-bgcolor--);
+    color: var(--nav-bg-color--);
+    cursor: pointer;
+    border: none;
+    width: 40%;
+    border-radius: 30px;
+
+}
+
+.SetStatus section button:active{
+    
+    color: var(--nav-button-bgcolor--);
+    background-color: var(--nav-bg-color--);
+    border: 1px solid var(--nav-button-bgcolor--);
+
+
+}
+
+.button_wrapper{
+    background-color: yellow;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 5%;
+    width: 40%;
+    height: 10%;
+
+   
+
+}
+
+
+
+
+
 
 /* Phone */
 
@@ -168,6 +414,63 @@ main{
      .page_title h1{
         font-size: 100%;
      }
+     /*-------*/
+     .content_wrapper{
+        flex-direction: column;
+     
+     }
+
+     .To_Prepare,.Recieved,.Done{
+        width: 100%;
+        height: 33.33%;
+        position: relative;
+
+     }
+
+     .To_Prepare h3,.Recieved h3,.Done h3{
+
+        font-size: .8rem;
+    }
+
+     table{
+        font-size: .5rem;
+        width: 90%;
+     }
+
+
+
+
+     table tbody tr td button{
+      font-size: .5rem;
+      }
+
+      table tbody tr td select{
+        font-size: .5rem;
+        width: 50%;
+        
+    }
+
+
+    .SetStatus section{
+        
+        width: 80%;
+      
+    }
+
+
+    .button_wrapper{
+        
+        width: 80%;
+    }
+
+    .SetStatus{
+
+        font-size: .8rem;
+    }
+    
+     
+
+
 
 
 
@@ -194,6 +497,53 @@ main{
         font-size: 100%;
      }
 
+     .content_wrapper{
+        flex-direction: column;
+     
+     }
+
+     .To_Prepare,.Recieved,.Done{
+        width: 100%;
+        height: 33.33%;
+        position: relative;
+
+     }
+
+     .To_Prepare h3,.Recieved h3,.Done h3{
+
+        font-size: .8rem;
+    }
+
+     table{
+        font-size: .5rem;
+        width: 90%;
+     }
+
+
+    table tbody tr td button{
+      font-size: .8rem;
+  
+    }
+
+    table tbody tr td select{
+        font-size: .8rem;
+        width: 80%; 
+    }
+
+    .SetStatus section{   
+        width: 80%;   
+    }
+
+    .button_wrapper{       
+        width: 80%;
+    }
+
+    .SetStatus{
+
+        font-size: .8rem;
+    }
+    
+
 }
 
 @media screen and (max-width: 932px) and (orientation:landscape){
@@ -213,6 +563,42 @@ main{
      
    
      }
+
+     .content_wrapper{
+        flex-direction: row;
+        width: 100%;
+     
+     }
+
+     .To_Prepare,.Recieved,.Done{
+        width: 33.33%;
+        height: 100%;
+        position: relative;
+
+     }
+     
+    table{
+            font-size: .3rem;
+      
+     }
+
+     table tbody tr td button{
+        font-size: .4rem;
+    
+        }
+
+    
+        .SetStatus{
+            height: 80%;
+       
+            transform: translate(70%,15%);
+        }
+
+        
+
+
+
+
     
 }
 
@@ -224,6 +610,39 @@ main{
 
     nav > div:not(:first-child,:last-child) svg{
         width: 10%;
+    }
+
+    table{
+        font-size: .6rem;
+        width: 90%;
+     }
+
+     
+     .content_wrapper{
+        flex-direction: row;
+        width: 100%;
+     
+     }
+
+     .To_Prepare,.Recieved,.Done{
+        width: 33.33%;
+        height: 100%;
+        position: relative;
+
+     }
+     table{
+        width: 90%;
+      
+     }
+     
+     table tbody tr td button{
+      font-size: .6rem;
+      }
+
+      table tbody tr td select{
+        font-size: .8rem;
+        width: 50%;
+        
     }
 
 }
