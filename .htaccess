@@ -44,6 +44,26 @@
     </Limit>
 </Files>
 
+<Files "SetStatus.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
+<Files "Id_SetStatus.php">
+    # Deny access by default
+    Deny from all
+
+    # Allow POST method
+    <Limit POST>
+        Allow from all
+    </Limit>
+</Files>
+
 <Files "table1.php">
     # Deny access by default
     Deny from all

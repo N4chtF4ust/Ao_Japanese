@@ -461,7 +461,7 @@ nav button > *{
 }
 
 .cart_icon_wrapper{
-    background-color: yellow;
+ 
     width: 5%;
     height: 50%;
     display: flex;
@@ -523,7 +523,7 @@ nav button > *{
 
 .product_name_wrapper,.product_quantity_wrapper,.product_price_wrapper{
     font-size: 80%;
-    background-color: yellow;
+
 }
 .product_name_wrapper{
 
@@ -559,7 +559,7 @@ nav button > *{
 
 
 .product{
-    background-color:pink;
+
     width: 100%;
     height: 10vh;
     display: flex;
@@ -597,7 +597,7 @@ nav button > *{
 }
 
 .total_wrapper{
-    background-color: paleturquoise;
+
     width: 100%;
     height: 5%;
     bottom: 5%;
@@ -614,7 +614,7 @@ nav button > *{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: yellowgreen;
+  
 }
 .button_wrapper button{
     width: 50%;

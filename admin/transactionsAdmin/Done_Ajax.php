@@ -1,19 +1,60 @@
 <?php 
-$Done_Quantity_user = 1;
-for ($i = 1; $i <= $Done_Quantity_user; $i++) { 
+include("../assets/connect.php");
+function find_from_db($col_name,$table,$productId,$conn ){
+
+    // Safely extract values from $product array
+    // Safely extract values from $product array
+    // Get the table name
+    // Get the product ID
+    
+    // Use prepared statement for security
+    
+    $find_product =  "SELECT * FROM `$table` WHERE id = ? ";  // Use ? for binding the product ID
+    $stmt = $conn->prepare($find_product); // Prepare the statement
+    
+    // Bind the product ID parameter (assuming it's an integer)
+    $stmt->bind_param("i", $productId);
+    
+    // Execute the query
+    $stmt->execute();
+    $result = $stmt->get_result(); // Get the result from the prepared statement
+    
+    // Check if any rows are returned
+    if ($result->num_rows > 0) {
+    while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
+      $found = $row["$col_name"] ;
+    }
+    }
+    
+    return $found;
+    
+}
+
+
+$To_Recieve_Quantity_user = 1;
+$find_product = "SELECT * FROM transaction where progress = 'Done' AND payment = 'Paid'; ";
+$result = mysqli_query($conn, $find_product);
+
+
+
+if ($result->num_rows>0) {
+  while($row = mysqli_fetch_array($result)){
+
+    $jsonData = json_decode($row['products'], true);
+    $total = 0;
 ?>
 
 <table border="0">
     <tbody>
         <tr>
             <th colspan="4">
-                <p> CustomerID: <span>1</span> </p>
+                <p> CustomerID:  <span id="CustomerID" > <?php echo $row["id"]; ?> </p>
             </th>
         </tr>
 
         <tr>
             <th colspan="4">
-                <p> Customer Name: <span>Robert</span> </p>  
+                <p> Customer Name: <span> <?php echo $row["name"]; ?> </span> </p>
             </th>
         </tr>
 
@@ -32,39 +73,36 @@ for ($i = 1; $i <= $Done_Quantity_user; $i++) {
             </th>
         </tr>
 
-        <?php for ($j = 1; $j <= 1; $j++) {  ?>
+           <?php foreach ($jsonData as $product ) { 
+            $total += find_from_db("price",$product['TABLE'],$product['PRODUCT_ID'],$conn  ) * $product['QUANTITY']; ?>
             <tr>
                 <td>
-                    <p>Name</p>
+                    <p><?php echo find_from_db("name",$product['TABLE'],$product['PRODUCT_ID'],$conn  ); ?></p>
                 </td>
-
                 <td>
-                    <img src="../assets/uploaded_img/chicken-katsudon-removebg-preview.png" alt="images">
+                    <img src="../assets/uploaded_img/<?php echo find_from_db("img",$product['TABLE'],$product['PRODUCT_ID'],$conn  ); ?>" alt="">
                 </td>
-
                 <td>
-                    <p>Price</p>
+                    <p><?php echo find_from_db("price",$product['TABLE'],$product['PRODUCT_ID'],$conn  ); ?></p>
                 </td>
-
                 <td>
-                    <p>Quantity</p>
+                    <p><?php echo $product['QUANTITY'];  ?></p>
                 </td>
             </tr>
         <?php } ?>
 
         <tr>
-            <td colspan="2">
-                <p>Total Quantity: 99</p>
-            </td>
-
-            <td colspan="2">
-                <p>Total Price: Php 99</p>
-            </td>
+                <td colspan="2">
+                    <p>Total Quantity:  <?php echo $row["total_quantity"]; ?> </p>
+                </td>
+                <td colspan="2">
+                    <p>Total Price: Php <?php echo  $total; ?> </p>
+                </td>
         </tr>
 
         <tr>
             <td colspan="4">
-                <button>Undone</button> 
+                <button  onclick="undone(<?php  echo $row['primary_id']; ?>)">Undone</button> 
             </td>
             <!-- Waiting or To Receive -->
         </tr>
@@ -74,4 +112,13 @@ for ($i = 1; $i <= $Done_Quantity_user; $i++) {
 
 <br>
 
-<?php } ?>
+
+<?php  }   }
+
+else{
+
+
+?>
+<h3>No Tables Available</h3>
+
+<?php }?>

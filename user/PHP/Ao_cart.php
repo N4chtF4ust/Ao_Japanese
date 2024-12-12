@@ -105,20 +105,21 @@ function product_name($TABLE,$PRODUCT_ID,$conn){
 
       }
     }
-
-  
+    $_SESSION['total_price'] = $total;
+    
     return  $total ;
 
 
  }
 
-
+ $buy = false;
 // Check if the user has cart items
 if (isset($user[$userId])) {
     // Loop through the cart items for this user
     foreach ($user[$userId] as $cartItems) {
         // Loop through the individual items in the cart
 ?>
+<?php $buy = true;?>
 
 <div class="product">
 
@@ -179,13 +180,13 @@ if (isset($user[$userId])) {
 
         <div class="button_wrapper">
 
-           <button id="cart_buy">
+           <button id="cart_buy" <?php if($buy){ ?> onclick="buy(<?php echo $userId;  ?>)" <?php }?> >
 
             <svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
             <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
             </svg> 
 
-            <h4> Buy </h4> 
+            <h4 > Buy </h4> 
 
           </button>
            <button id="cart_close" onclick="toggleCart(document.getElementById('cart_wrapper'))">

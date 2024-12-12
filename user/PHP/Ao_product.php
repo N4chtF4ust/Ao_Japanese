@@ -53,12 +53,10 @@ echo "<script>console.log('This the username: '+'$username')</script>";
         <div class="cart_icon_wrapper" onclick="toggleCart(document.getElementById('cart_wrapper'))">
 
           <img src="../CSS/product-asset/cart.svg" alt=""  id="cart" >
-          <h3>0</h3>
+          <h3 id="CartIconQuantity"></h3>
 
         </div>
 
-  
-      
         <button onclick="window.location.href='../PHP/Userpage_out.php'"> 
 
 <svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
@@ -142,14 +140,43 @@ for ($i=1; $i <=10 ; $i++) {
             }
         ?>
 
- 
-
-       
            
     </div>
 <script>
   //to make the table realtime from databse
   //Table1
+function buy(userId) {
+  
+    let userResponse = window.confirm("After purchasing, your account will be logged out automatically \nDo you want to proceed?");
+   
+if (userResponse) {
+ //   console.log("The Buyer UserId is: " + userId);
+
+    fetch("Transaction/buy.php", {  // This fetches the same page
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+    },
+     body: JSON.stringify(userId)  // Send the data in the request body
+     })
+       .then(function(response){
+     return response.text();
+  }).then(function(data) {
+    console.log(data);
+    
+  })
+  
+
+
+} else {
+
+}
+
+
+  window.location.href='../PHP/Userpage_out.php'
+    
+}
+
   function table(){
     
   for (let i = 1; i <= 10; i++) {
@@ -168,9 +195,22 @@ for ($i=1; $i <=10 ; $i++) {
   }
   xhttp2.open("POST", "Ao_Cart.php",true);
   xhttp2.send();
+//Icon Quantity
+  const xhttp3 = new XMLHttpRequest();
+  xhttp3.onload = function(){
+    document.getElementById("CartIconQuantity").innerHTML = this.responseText;
+  }
+  xhttp3.open("POST", "AddToCart/IconQuantity.php",true);
+  xhttp3.send();
+
 } 
 
+
+
+
 setInterval(function(){table();}, 1000);
+
+
 
 function testing(product_id,product_name,price,fileName,table){
     var userId = <?php echo json_encode($userId); ?>;

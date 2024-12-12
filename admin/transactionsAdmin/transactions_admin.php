@@ -80,7 +80,7 @@
         <div class="content_wrapper">
 
              <div class="To_Prepare">
-     
+                 <br>
                 <h3>To Prepare</h3>
       
                 <div class="To_Prepare_Ajax">
@@ -90,8 +90,8 @@
              </div>
 
             <div class="Recieved">
-
-              <h3>To Recieve</h3>
+              <br>
+              <h3>Set Status</h3>
 
               <div class="Recieve_Ajax">
         
@@ -102,7 +102,7 @@
         <div class="Done">
 
 
-    
+        <br>
         <h3>Done</h3>
         <div class="Done_Ajax">
         
@@ -116,26 +116,32 @@
   
 </div>
 
-        </div>
+        </div> 
+        
 
         <div class="SetStatus" id="SetStatus">
-       <h2>  <p> CustomerID: <span>1</span> </p></h2>
-       <h3>  <p> Name: <span>Robert</span> </p></h3>         
-       <h3><p>Status: <span>?</span></p></h3>
 
+        <br>
+
+        <div class="SetStatus_header">
+
+        </div>
+    
        <section>
-
+      
        <select name="status" id="status">
         <option value="" disabled selected>--select--</option>
         <option value="None">None</option>
-        <option value="waiting">Waiting</option>
-        <option value="to-receive" >To Receive</option>
+        <option value="Waiting">Waiting</option>
+        <option value="To Receive" >To Receive</option>
        </select>
-
-       <div class="button_wrapper">
-       <button >Save</button>
-       <button onclick="SetStatusClose(document.getElementById('SetStatus'))">Close</button>
-
+       <br>
+       <p id="statusMessage" ></p>
+ 
+        <div class="button_wrapper">
+        <button onclick="save()">Save</button>
+        <button onclick="SetStatusClose(document.getElementById('SetStatus'))">Close</button>
+ 
 
        </div>
       
@@ -155,6 +161,124 @@
 
   
     <script>
+
+function save() {
+      var status = document.getElementById("status").value;
+
+      // Check if no option is selected (value is an empty string)
+
+      let primary_id =  document.getElementById("primary_id").value;
+     
+      if (status === "" ) {
+        document.getElementById("statusMessage").style.color = "red";
+        document.getElementById("statusMessage").innerText = "You must select a status before saving!";
+        document.getElementById("status").style.borderColor = "red";
+        
+        
+      }
+
+      else{
+        document.getElementById("statusMessage").innerText = "";
+        document.getElementById("status").style.borderColor = "black";
+
+        //console.log(status)
+        //console.log(primary_id)
+
+        let SetStatus = {
+           primary_id : primary_id,
+           status: status
+        }
+
+        fetch("Update_SetStatus.php", {  // This fetches the same page
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+    },
+     body: JSON.stringify(SetStatus)  // Send the data in the request body
+     })
+
+        document.getElementById("SetStatus").style.display = 'none';
+        document.getElementById("status").value = "";
+      
+      
+      }
+
+   
+    }
+
+    function SetStatusClose(element){     
+    element.style.display = 'none';  
+   var status = document.getElementById("status").value = "";  
+  // status = "" ;      
+   console.log(status);
+
+   if(status === ""){
+    document.getElementById("statusMessage").innerText = "";
+    document.getElementById("status").style.borderColor = "black";
+
+   }
+}
+
+function paid(id) {
+  //console.log(id);
+
+  fetch("paid.php", {  // This fetches the same page
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+    },
+     body: JSON.stringify(id)  // Send the data in the request body
+     })
+
+
+  
+}
+
+function not_paid(id) {
+  //console.log(id);
+
+  fetch("NotPaid.php", {  // This fetches the same page
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+    },
+     body: JSON.stringify(id)  // Send the data in the request body
+     })
+
+
+}
+
+function done(id) {
+  //console.log(id);
+
+  fetch("Done.php", {  // This fetches the same page
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+    },
+     body: JSON.stringify(id)  // Send the data in the request body
+     })
+
+
+
+}
+
+function undone(id) {
+  //console.log(id);
+
+  fetch("Undone.php", {  // This fetches the same page
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+    },
+     body: JSON.stringify(id)  // Send the data in the request body
+     })
+
+
+
+}
+
+
 
 function table(){
 
@@ -176,27 +300,48 @@ xhr2.send();
   
 
 
-  const xhr3 = new XMLHttpRequest();
+const xhr3 = new XMLHttpRequest();
 xhr3.onload = function () {
   document.getElementsByClassName('Done_Ajax')[0].innerHTML = this.responseText;
 };
 xhr3.open("POST", 'Done_Ajax.php', true);
 xhr3.send();
 
+const xhr4 = new XMLHttpRequest();
+xhr4.onload = function () {
+  document.getElementsByClassName('SetStatus_header')[0].innerHTML = this.responseText;
+};
+xhr4.open("POST", 'SetStatus.php', true);
+xhr4.send();
+
   
 
 }
 
 
-setInterval(function(){table();}, 1000);
+setInterval(function(){table();}, 500);
 
-function SetStatus(element){
+function SetStatus(element,id){
     element.style.display = 'flex';
+   // console.log(id);
+
+   let customer_primary_id = {
+    primary_id: id 
+
+   };
+
+ // console.log(customer_primary_id);
+    fetch("Id_SetStatus.php", {  // This fetches the same page
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+    },
+     body: JSON.stringify(customer_primary_id)  // Send the data in the request body
+     })
+
 }
 
-function SetStatusClose(element){     
-    element.style.display = 'none';           
-}
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -227,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isDragging) return;
 
     // Prevent scrolling when dragging on mobile
-    event.preventDefault();
+   // event.preventDefault();
 
     const clientX = event.type === 'touchmove' ? event.touches[0].clientX : event.clientX;
     const clientY = event.type === 'touchmove' ? event.touches[0].clientY : event.clientY;
