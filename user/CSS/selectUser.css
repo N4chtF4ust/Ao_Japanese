@@ -571,21 +571,11 @@ input:focus ~ #eye svg{
 
 
 #select-option-container{
-  font-size: 1rem;
-
-
-
-  width: 100%;
-
-
-}
-
-#select-option-container select{
-  width: 100%;
-
-  padding: 2%;
-  font-size: 1.5rem;
-
+  background-color: #810000;
+  border-radius: 10px;
+  display: flow;
+  padding: 1%;
+  width: 75%;
 }
 
 .select-body{
