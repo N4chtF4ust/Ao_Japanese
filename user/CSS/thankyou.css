@@ -75,3 +75,46 @@ main button:active{
     outline: 1px solid var(--menu-logo--);
 
 }
+
+@media screen and (max-width: 767px) {
+
+    main{
+        font-size: .5rem;
+
+      }
+
+      .Timer_wrapper {
+        width: 5rem;
+        height: 5rem;
+        font-size: .5rem;
+      }
+
+      main button{
+        font-size: .5rem;
+        padding: 5%;
+      }
+
+}
+
+@media screen and (max-width: 932px) and (orientation:landscape){
+
+      main{
+        font-size: .4rem;
+
+      }
+
+      .Timer_wrapper {
+        width: 4rem;
+        height: 4rem;
+        font-size: .4rem;
+      }
+
+      main button{
+        font-size: .5rem;
+        padding: 3%;
+        border-radius: 3px;
+       
+      }
+
+
+}

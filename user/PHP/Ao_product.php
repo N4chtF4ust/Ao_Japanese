@@ -147,7 +147,7 @@ for ($i=1; $i <=10 ; $i++) {
   //Table1
 function buy(userId) {
   
-    let userResponse = window.confirm("After purchasing, your account will be logged out automatically \nDo you want to proceed?");
+    let userResponse = window.confirm("After purchasing, your account will be logged out automatically in 10 seconds \n\nDo you want to proceed?");
    
 if (userResponse) {
  //   console.log("The Buyer UserId is: " + userId);
@@ -165,6 +165,8 @@ if (userResponse) {
     console.log(data);
     
   })
+
+    window.location.href='../PHP/ThankYou.php';
   
 
 
@@ -173,7 +175,7 @@ if (userResponse) {
 }
 
 
-  window.location.href='../PHP/Userpage_out.php'
+
     
 }
 

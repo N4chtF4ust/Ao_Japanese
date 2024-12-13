@@ -32,7 +32,7 @@ function find_from_db($col_name,$table,$productId,$conn ){
 
 
 $To_Recieve_Quantity_user = 1;
-$find_product = "SELECT * FROM transaction where progress = 'Done' AND payment = 'Paid'; ";
+$find_product = "SELECT * FROM transaction where progress = 'Done' AND payment = 'Paid' order by primary_id desc ; ";
 $result = mysqli_query($conn, $find_product);
 
 

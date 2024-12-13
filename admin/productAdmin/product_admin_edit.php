@@ -162,7 +162,7 @@
     <div class="submit_wrapper">
     
         <input type="submit" value="Save" name="save" >
-        <button onclick="window.location.href='product_admin.php'">close</button>
+        <button onclick="window.location.href='product_admin.php'">Close</button>
        
         
     </div>

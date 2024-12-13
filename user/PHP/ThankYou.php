@@ -1,12 +1,14 @@
 <?php
 session_start();
 
- /*$BuyClick = $_SESSION['BuyClick']  ;
+include ("../PHP/Ao_connect.php");
 
- if(isset($BuyClick)){
-    header("Location: Userpage_out.php");
+if (!isset($_SESSION['BuyClicked'])) {
+    header("Location: ../PHP/Ao_customer.php");
     exit();
- }*/
+}
+
+$username = $_SESSION['username'];
 
 ?>
 
@@ -23,7 +25,8 @@ session_start();
 
 <main>
 
-    <h1> <span>Robert</span>, Thank You For Purchasing </h1>
+    <h1>Thank You <span><?php   echo $username ;?> </span> <br>Now Proceed to Cashier </h1>
+
     <br>
 
     <div class="Timer_wrapper">
@@ -34,13 +37,13 @@ session_start();
    <br>
 
    
-    <button> Return Log in </button>
+    <button onclick="window.location.href = 'Userpage_out.php';"> Return Log in </button>
 
 </main>
 
 <script>
 // Set the starting time (10 seconds)
-let timeLeft = 10;
+let timeLeft = 9;
 
 // Function to update the timer
 function updateTimer() {
@@ -50,7 +53,7 @@ function updateTimer() {
     } else {
         document.getElementById('timer').innerText = "Time's up!";
         // Optionally, you could redirect the user after the timer ends:
-        // window.location.href = "redirect_page.html"; 
+         window.location.href = "Userpage_out.php"; 
     }
 }
 

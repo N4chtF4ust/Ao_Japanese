@@ -55,7 +55,7 @@
                         <input type="text" name="name" id="name">
 
                         <label for="email">Email: </label>
-                        <input type="tel" name="email" id="email">
+                        <input type="email" name="email" id="email">
 
                         <label for="Messages">Messages: </label>
                         <textarea name="Messages" id="Messages" placeholder="Enter your message here...." form="contact_form"></textarea>

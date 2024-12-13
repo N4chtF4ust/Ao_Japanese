@@ -120,7 +120,12 @@ if ($result->num_rows>0) {
 
 
                 <td colspan="2">
+
+                    <?php if(  $row['status'] === "None" ) { ?>
                     <button  onclick="not_paid(<?php  echo $row['primary_id']; ?>)" >Not Paid</button> 
+                    <?php }  else{  ?>
+                        <button disabled>Not Paid</button>
+                    <?php } ?>
                 </td>
 
                 <td colspan="2">

@@ -674,7 +674,7 @@ display: none;
     }
   }
  
-  @media  screen and (max-width: 767px) and (orientation:portrait) {
+  @media  screen and (max-width: 767px)  {
 
     #rightcontainer{
         bottom: 4%;
@@ -686,7 +686,7 @@ display: none;
 
 }
 
-@media  screen and (min-width: 768px) and (max-width: 1024px) and (orientation:portrait) {
+@media  screen and (min-width: 768px) and (max-width: 1280px) {
     
     #rightcontainer{
         bottom: 5%;
@@ -695,6 +695,92 @@ display: none;
     #leftcontainer{
         bottom: 5%;
     }
+
+        /*Nav*/
+        nav button{
+            width: 15%;
+        }
+        
+        
+        
+        
+            /*Hamburger menu*/
+        
+        
+        .logo_wrapper{
+         display: none;
+        }
+        
+        .menu_logo{
+            display: block;
+        }
+        
+        .menu_logo_wrapper{
+            width: 30px;
+            height: 30px;
+        }
+        
+        
+        
+        
+        .nav_wrapper{
+            position: absolute;
+            flex-direction: column;
+            top: 0;
+        
+            height: 100vh;
+            width: 100vw;
+           
+            background-color: var(--nav-header--);
+            left: -150%;
+            transition: .3s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .nav_wrapper :not(:nth-child(5)){
+            margin-bottom: 5%;
+          }
+          
+          .nav_wrapper h3:active{
+              color: #EEEBDD;
+              background-color: #810000;
+              border-radius: 5px;
+              padding: 1%;
+             
+          }
+        
+        .nav_wrapper.click{
+            transition: .3s ease-in-out;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .menu_logo.click::before{
+            transform: translateY(200%) rotate(45deg);
+        }
+        
+        .menu_logo.click::after{
+            transform: translateY(-200%) rotate(-45deg);
+        }
+        
+        .menu_logo.click:nth-child(1){
+            background-color: transparent;
+        }
+
+        /**/
+        .content{
+            text-align: center;
+        }
+        .content p{
+
+            width: 100%;
+            align-self: center;
+        }
+        
 
 }
 

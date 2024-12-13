@@ -319,7 +319,7 @@ xhr4.send();
 }
 
 
-setInterval(function(){table();}, 500);
+setInterval(function(){table();}, 1000);
 
 function SetStatus(element,id){
     element.style.display = 'flex';

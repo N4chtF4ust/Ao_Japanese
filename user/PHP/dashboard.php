@@ -105,10 +105,10 @@
 
 </head>
 
-<body>
+<body  onload="table();" >
 
     <header>
-        <h1>Dashboard Lods</h1>
+        <h1>Dashboard</h1>
     </header>
 
     <div class="two-table">
@@ -126,15 +126,10 @@
                 </tr>
 
             </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
+            <tbody id="waiting">
+              
+        
+          
             </tbody>
         </table>
         </div>
@@ -152,19 +147,41 @@
                 <th>Username</th>      
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
+            <tbody id="received">
+              
+        
+          
+              </tbody>
         </table>
         </div>
     </div>
+
+    <script>
+    
+function table(){
+    
+   
+    const xhr = new XMLHttpRequest();
+    xhr.onload = function () {
+      document.getElementById("waiting").innerHTML = this.responseText;
+    };
+    xhr.open("POST", "Waiting_AJax.php", true);
+    xhr.send();
+
+    const xhr2 = new XMLHttpRequest();
+    xhr2.onload = function () {
+      document.getElementById("received").innerHTML = this.responseText;
+    };
+    xhr2.open("POST", "ToReceive_Ajax.php", true);
+    xhr2.send();
+   }
+
+
+   
+
+   setInterval(function(){table();}, 1000);
+    
+    </script>
 
 </body>
 </html>

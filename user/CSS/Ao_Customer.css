@@ -148,6 +148,7 @@ body{
   position: relative;
   text-align: center;
 
+
   
 }
 
@@ -168,6 +169,7 @@ body{
 
   backdrop-filter: blur(10px);
 
+
 }
 
 #sign_in h1,#sign_up h1{
@@ -175,6 +177,8 @@ body{
   font-family: "Permanent Marker", cursive;
   display: grid;
   place-items: center;
+  font-size: 1.5rem;
+
  
 
  
@@ -182,11 +186,14 @@ body{
   height: 10%;
 
 
+
 }
 
 #sign_up form{
   height: 60%;  
 }
+
+
 
 
 
@@ -264,6 +271,7 @@ form input[type="tel"]{
   font-weight: bolder;
   cursor: pointer;
   border-radius: var(--form-input-border-radius);
+
 }
 
 form input[type="submit"]:active{
@@ -282,6 +290,7 @@ form input[type="submit"]:active{
   color: var(--submit-button-text);
 
   font-size: 150%;
+  
 
  
 
@@ -599,7 +608,68 @@ input:focus ~ #eye svg{
   font-size: 2vh;
 }
 
-/* Mobile Devices (up to 600px) */
+@media screen and (max-width: 767px)  {
+  #sign_in,#sign_up{
+    height: 70%;
+    width: 80%;
+    
+   }
+
+   #sign_in h1,#sign_up h1{
+
+
+    font-size: 1.2rem;
+  
+  }
+
+
+}
+
+@media screen and (min-width: 768px) and  (max-width: 1280px)  {
+
+  #sign_in,#sign_up{
+    height: 70%;
+    width: 60%;
+   }
+
+}
+
+@media  screen and (max-width: 932px) and (orientation:landscape){
+
+  #sign_in,#sign_up{
+    height:90%;
+    width: 40%;
+   }
+
+   
+   #sign_in h1,#sign_up h1{
+
+
+    font-size: 1rem;
+  
+  }
+}
+
+@media screen and (min-width: 933px) and  (max-width: 1280px)  and (orientation:landscape) {
+
+
+    
+  #sign_in,#sign_up{
+    height:90%;
+    width: 40%;
+   }
+
+   
+   #sign_in h1,#sign_up h1{
+
+
+    font-size: 1.5rem;
+  
+  }
+
+}
+
+/* Mobile Devices (up to 600px) 
 @media only screen and (max-width: 600px) and (orientation: portrait) {
 
 
@@ -610,6 +680,13 @@ input:focus ~ #eye svg{
   width: 80%;
   
  }
+
+ #sign_in h1,#sign_up h1{
+
+
+  font-size: 1.3rem;
+
+}
 
  #sign_up ::placeholder{
   font-size: 70%;
@@ -630,7 +707,7 @@ input:focus ~ #eye svg{
  
  }
 
-/* Tablets (601px to 992px) */
+/* Tablets (601px to 992px) 
 @media only screen and (min-width: 601px) and (max-width: 1023px) and (orientation: portrait) {
   
  .right_container{
@@ -643,12 +720,14 @@ input:focus ~ #eye svg{
  }
 
 
+
+
 }
 
 @media only screen and (min-width: 601px) and (max-width: 1023px) and (orientation: landscape) {
   #sign_in,#sign_up{
     height: 90%;
-    width: 30%;
+    width: 50%;
     
    }
 
@@ -686,10 +765,10 @@ input:focus ~ #eye svg{
 }
 
 
-/* Desktops (993px and up) */
+/Desktops (993px and up) 
 @media only screen and (min-width: 993px) {
-  /* Your desktop-specific styles here */
-}
+  /* Your desktop-specific styles here 
+}*/
 
 
 

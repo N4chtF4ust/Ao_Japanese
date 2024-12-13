@@ -30,6 +30,7 @@ if(isset($user[$userId])){
 
          if ($stmt->execute()) {
             echo "Data inserted successfully!";
+            $_SESSION['BuyClicked'] = true;
         } else {
             echo "Error: " . $stmt->error;
         }

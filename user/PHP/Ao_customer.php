@@ -9,8 +9,6 @@ if (isset($_SESSION['username'])) {
     exit();
 }
 
-
-
 if(isset($_POST["login_user"])){
 
 
@@ -27,15 +25,10 @@ if(mysqli_query($conn, $adduser)){
 
   } 
 
-
-
  $Last = "SELECT * FROM customers WHERE ID=(SELECT max(ID) FROM customers)";
  $result = mysqli_query($conn,$Last);
 
 
-
-
- 
 if (mysqli_num_rows($result) > 0) {
   // output data of each row
   while($row = mysqli_fetch_assoc($result)) {
@@ -53,12 +46,6 @@ exit();
  }
 
 
-
-
-
-
-
-
 ?>
 
 
@@ -69,7 +56,7 @@ exit();
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ao Restaurant</title>
-<link rel="stylesheet" href="../CSS/signin_signup.css">
+<link rel="stylesheet" href="../CSS/Ao_Customer.css">
 <link rel="icon" href="../CSS/homepage_photo/logo.png" type="image/x-icon">
 <script src="../JSC/signin_signup.js" defer></script>
 
