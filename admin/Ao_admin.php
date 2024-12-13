@@ -22,15 +22,7 @@
               <h1>VERIFY LOG IN</h1>
               <form action="login.php" method="post"> 
 
-              <?php
-
-              if(isset($_GET['error'])) { ?>
-                <div id="errorHandler-container" class="errorHandler-container"> 
-                  <p class="errorHandler"><?php echo $_GET['error'];?></p>
-                </div>
-              <?php
-                }
-              ?>
+      
                   <div id="username-wrapper" class="outline">
                   <input type="text" name="adminUser" placeholder="Enter admin name" style="order: 2" >
                   <label for="username" id="placehold"></label>
@@ -58,6 +50,16 @@
                     </svg>
                   </div>
                 </div>
+
+                <?php
+
+if(isset($_GET['error'])) { ?>
+  <div id="errorHandler-container" class="errorHandler-container"> 
+    <p class="errorHandler"><?php echo $_GET['error'];?></p>
+  </div>
+<?php
+  }
+?>
 
                 <input type="submit"  name="enter_Admin" value = "Sign in">
                 <input type="button" onclick="window.location.href='/Ao_Japanese/'" value = "Back">

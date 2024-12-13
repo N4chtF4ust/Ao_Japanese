@@ -1,19 +1,65 @@
 <?php
-session_start();
 
-
-  
 require_once('..\assets\connect.php');
-
-if(!isset($_SESSION['adminName'])) {
-    header("Location: /Ao_Japanese/admin/Ao_admin.php");
-    exit();
-  }
+session_start();
 
 $query = "SELECT * from employees";
 $result = mysqli_query($conn, $query);
 
 ?>
+<?php
+// Add Employee
+if (isset($_POST['add'])) {
+    $name = $_POST['name'];
+    $age = $_POST['age'];
+    $sex = $_POST['sex'];
+    $position = $_POST['position'];
+
+    $sql = "INSERT INTO employees (name, age, sex, position) VALUES (?, ?, ?, ?)";
+    if ($stmt = mysqli_prepare($conn, $sql)) {
+        mysqli_stmt_bind_param($stmt, 'siss', $name, $age, $sex, $position); // Binding parameters
+        if (mysqli_stmt_execute($stmt)) {
+            echo "<script>alert('Employee Added Successfully')</script>";
+        } else {
+            echo "<script>alert('Failed to add employee')</script>";
+        }
+        mysqli_stmt_close($stmt);
+    }
+    echo "<script>window.location.href = '" . $_SERVER['PHP_SELF'] . "';</script>";
+    exit;
+}
+
+// Edit Employee (redirect to edit page)
+if (isset($_POST['edit'])) {
+    $_SESSION['employee_data'] = [
+        'id' => $_POST['id'],
+        'name' => $_POST['name'],
+        'age' => $_POST['age'],
+        'sex' => $_POST['sex'],
+        'position' => $_POST['position']
+    ];
+    header("Location: edit_staffs.php");
+    exit;
+}
+
+// Delete Employee
+if (isset($_POST['delete'])) {
+    $id = $_POST['id']; // Get the ID of the employee to be deleted
+    $sql = "DELETE FROM employees WHERE id = ?";
+    if ($stmt = mysqli_prepare($conn, $sql)) {
+        mysqli_stmt_bind_param($stmt, 'i', $id); // Bind ID as integer
+        if (mysqli_stmt_execute($stmt)) {
+            echo "<script>alert('Employee Deleted Successfully')</script>";
+        } else {
+            echo "<script>alert('Failed to delete employee')</script>";
+        }
+        mysqli_stmt_close($stmt);
+    }
+    echo "<script>window.location.href = '" . $_SERVER['PHP_SELF'] . "';</script>";
+    exit;
+}
+?>
+
 
 
 
@@ -27,7 +73,7 @@ $result = mysqli_query($conn, $query);
     <script src="../assets/links.js" defer></script>
 </head>
 
-<body>
+<body onload="table();">
 
     <nav >
     
@@ -77,8 +123,8 @@ $result = mysqli_query($conn, $query);
     </div>
     
     <div class="signout_wrapper">
-    <button onclick="window.location.href='/Ao_Japanese/admin/AdminOut.php'">
-    <svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+       <button>
+       <svg xmlns="http://www.w3.org/2000/svg" width="50%" height="50%" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
          <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
          <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
         </svg> 
@@ -91,25 +137,24 @@ $result = mysqli_query($conn, $query);
 
     <main>
         <div class="page_title">
-            <h1>EMPLOYEES</h1>
+            <h1>Employees</h1>
 
         </div>
-        <br>
         <div class="content_wrapper">
            <div>
-            <form method="post" class="form1">
+           <form id="form_add" action="" method="post" enctype="multipart/form-data">
 
-            <div>
+            <div class="productname_wrapper">
                 <label for = "name">Name:</label>
                 <input type="text" name="name" placeholder="Name" required>
             </div>
 
-            <div>
+            <div class="price_wrapper">
             <label for = "age">Age:</label>
                 <input type="number" name="age" placeholder="Age" required>
             </div>
 
-            <div>
+            <div class="option_wrapper">
             <label for = "sex">Sex:</label>
             <select name="sex" required>
               <option value="Male">Male</option>
@@ -117,151 +162,29 @@ $result = mysqli_query($conn, $query);
             </select>
             </div>
 
-            <div>
+            <div class="option_wrapper">
             <label for = "position">Position:</label>
-            <input type="text" name="position" placeholder="Position" required>
+            <select name="position" required>
+              <option value="Manager">Manager</option>
+              <option value="Cashier">Cashier</option>
+              <option value="Waiter">Waiter</option>
+              <option value="Chef">Chef</option>
+              <option value="Dishwasher">Dishwasher</option>
+              <option value="Head Chef">Head Chef</option>
+            </select>
             </div>
 
-            <div>
-            <button type="submit" name="add" class="addbutton">Add</button>
+            <div class="submit_wrapper">
+            <input type="submit" value="Add Employee" name="add" >
             </div> 
 
 
             </form>
-
-
-            <?php
-            //add
-            if (isset($_POST['add'])) {
-                $name = $_POST['name'];
-                $age = $_POST['age'];
-                $sex = $_POST['sex'];
-                $position = $_POST['position'];
-                $sql = "INSERT INTO employees (name, age, sex, position) VALUES ('$name', $age, '$sex', '$position')";
-                mysqli_query($conn, $sql);
-
-                echo "<script type='text/javascript'>
-                    alert('Employee Added');
-                    window.location.href = '" . $_SERVER['PHP_SELF'] . "';
-                    </script>";
-                    exit;
-            }
-            //Update
-            if (isset($_POST['edit'])) {
-                $id = $_POST['id'];
-                echo "<script>console.log('$id')</script>";
-                $name = $_POST['name'];
-                $age = $_POST['age'];
-                $sex = $_POST['sex'];
-                $position = $_POST['position'];
-
-                echo "<script>console.log('$name')</script>";
-                echo "<script>console.log('$age')</script>";
-                echo "<script>console.log('$sex')</script>";
-                echo "<script>console.log('$position')</script>";
-
-                $jsonFilePath = 'staffs.json';
-
-                if (file_exists($jsonFilePath)) {
-                    // Read the existing JSON data
-                    $jsonData = file_get_contents($jsonFilePath);
-                    $employeeList = json_decode($jsonData, true);  // Decode JSON into associative array
             
-                    // Flag to check if the product was updated
-                    $updated = false;
-            
-                    // Loop through the existing staffs and update the matching ID
-                    foreach ($employeeList as &$staffs) {
-                            $staffs['ID'] = $id; 
-                            $staffs['NAME'] = $name; 
-                            $staffs['AGE'] = $age;
-                            $staffs['SEX'] = $sex;
-                            $staffs['POSITION'] = $position;
-                            $updated = true;
-                            break;
-                        
-                    }
-            
-                    // If the product was not found, add a new one
-                    if (!$updated) {
-                        $employeeList[] = [
-                            'ID' => $id,
-                            'NAME' => $name,
-                            'AGE' => $age,
-                            'SEX' => $sex,
-                            'POSITION' => $position
-                        ];
-                    }
-            
-                    // Save the updated product list back to the JSON file
-                    $updatedJsonData = json_encode($employeeList, JSON_PRETTY_PRINT);
-                    file_put_contents($jsonFilePath, $updatedJsonData);
-                    header('Location: '. 'edit_staffs.php');
-            
-          
-                }
 
 
-            }
+            <table border="0" class="choice_content" id="contents">
 
-
-            // Delete
-            if (isset($_POST['delete'])) {
-                $id = $_POST['id']; // Get the ID of the employee to be deleted
-                $sql = "DELETE FROM employees WHERE id = $id";
-                mysqli_query($conn, $sql);
-
-                 echo "<script type='text/javascript'>
-                    alert('Employee Deleted');
-                    window.location.href = '" . $_SERVER['PHP_SELF'] . "';
-                    </script>";
-                    exit;
-}
-            ?>
-            <table border="2">
-                <tr class="tbheader">
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Sex</th>
-                    <th>Position</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-                <tr>
-                <?php
-                    while($row = mysqli_fetch_assoc($result)){
-                ?>
-
-                <tr class="trVal">
-                    <td><?php echo $row['ID']; ?></td>
-                    <td><?php echo $row['NAME']; ?></td>
-                    <td><?php echo $row['AGE']; ?></td>
-                    <td><?php echo $row['SEX']; ?></td>
-                    <td><?php echo $row['POSITION']; ?></td>
-
-                <td>
-                <form method="post" class="form2">
-                    <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
-                    <input type="hidden" name="name" value="<?php echo $row['NAME']; ?>">
-                    <input type="hidden" name="age" value="<?php echo $row['AGE']; ?>">
-                    <input type="hidden" name="sex" value="<?php echo $row['SEX']; ?>">
-                    <input type="hidden" name="position" value="<?php echo $row['POSITION']; ?>">
-                    <button type="submit" name="edit" class="edit_delbutton">Edit</button>
-                </form>
-                </td>
-                <td>
-                <form method="post" class="form2">
-                    <input type="hidden" name="id" value="<?php echo $row['ID']; ?>">
-                    <button type="submit" name="delete" class="edit_delbutton">Delete</button>
-                </form>
-                </td>
-                </tr>
-                <?php
-                    }
-                ?>
-
-                </tr>
             </table>
            </div>
 
@@ -270,8 +193,24 @@ $result = mysqli_query($conn, $query);
       
 
     </main>
-    
-    
+
+
+<script>
+
+function table(){
+
+  const xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    document.getElementById("contents").innerHTML = this.responseText;
+  };
+  xhr.open("POST", "staffs_table.php", true);
+  xhr.send();
+}
+
+  setInterval(function(){table();}, 1000);
+
+</script>
+
 </body>
 
 </html>

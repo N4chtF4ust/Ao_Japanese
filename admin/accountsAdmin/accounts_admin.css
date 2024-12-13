@@ -80,7 +80,7 @@ nav > div:not(:first-child) > h1{
 
 nav > div:not(:first-child,:last-child,:nth-child(2)):hover{  
     background-color: var(--table-td-bg-color--);
-  }
+}
 
 nav > :last-child button{
 

@@ -121,14 +121,14 @@
                         while ($row = mysqli_fetch_array($result)){
                                 $custID = $row["ID"];
                                 $custUser = $row["username"];
-                                // $checkIn = $row["logtime"];
+                                $checkIn = $row["logtime"];
 
 
                        echo "
                             <tr>
                             <td>  $custID </td>
                             <td>  $custUser </td>
-                            <td>  $formattedCheckIn  </td>
+                            <td>   $checkIn  </td>
                             </tr>
                             </tbody>
                             ";

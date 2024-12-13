@@ -12,6 +12,9 @@
   } else if($sel === "Dashboard") {
     header("location: ../Ao_Japanese/user/PHP/dashboard.php ");
   }
+  else{
+    header("location: index.php ");
+  }
 }
 
 ?>
@@ -34,7 +37,7 @@
 
             <div id="sign_in">
               <img src="logo.png" alt="AOLogo" id="logo">
-              <h1>Sign In</h1>
+              <h1>Please select</h1>
 
 
               <form action=" " method="post">
@@ -42,14 +45,17 @@
                     <div class="select-container">
                       
                       <select name="type_user" id="select-user">
-                      <option value="" disabled> --select-- </option>
+                      <option value="" disabled selected> --select-- </option>
                       <option value="Admin"> Admin</option>
                       <option value="Customer"> Customer</option>
                       <option value="Dashboard"> Dashboard</option>
 
                       </select>
+
+                 
                       
                     </div>
+            
                   </div>
                 <input type="submit" name="enter" value = "Enter">
               </form>
