@@ -13,9 +13,7 @@ if(isset($_POST["login_user"])){
 
 
 $username = $_POST["customer_name"];
-$rando = rand(10,2000);
-
-$adduser = "INSERT INTO customers( username, ticketNum) VALUES ('$username','$rando')";
+$adduser = "INSERT INTO customers(username) VALUES ('$username')";
  
 if(mysqli_query($conn, $adduser)){
 
