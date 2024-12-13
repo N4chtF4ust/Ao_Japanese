@@ -48,7 +48,7 @@ if (isset($_POST['adminUser']) && isset($_POST['adminPass'])) {
         }
     }
 } else {
-    header("Location: ../Ao_Japanese/admin/Ao_admin.php");
+    header("Location: ../Ao_Japanese-1/admin/Ao_admin.php");
     exit;
 }
 
