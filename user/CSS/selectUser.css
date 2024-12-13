@@ -550,10 +550,7 @@ input:focus ~ #eye svg{
   background-color: var(--signin_signup_h4--);
   transform: scaleX(0%);
   transition: .2s ease-in-out;
-  
-  
- 
- 
+
 }
 
 #create_acc_wrapper h4:hover::after {
@@ -571,7 +568,7 @@ input:focus ~ #eye svg{
 
 
 #select-option-container{
-  background-color: #810000;
+
   border-radius: 10px;
   display: flow;
   padding: 1%;
