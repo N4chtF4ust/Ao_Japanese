@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2024 at 11:59 AM
+-- Generation Time: Dec 14, 2024 at 12:06 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -182,7 +182,7 @@ CREATE TABLE `choice10` (
 CREATE TABLE `customers` (
   `ID` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `ticketNum` int(11) NOT NULL
+  `logtime` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -224,7 +224,8 @@ INSERT INTO `login` (`ID`, `username`, `password`, `usertype`) VALUES
 (5, 'EJ', '8ceb993588e1bd828aa46e49e1776e4680fc4d69', 'admin'),
 (6, 'robert pogi', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'admin'),
 (7, 'Lebron James', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'admin'),
-(8, '123', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'admin');
+(8, '123', '7c222fb2927d828af22f592134e8932480637c0d', 'admin'),
+(9, 'RIENZE POGI', '7c222fb2927d828af22f592134e8932480637c0d', 'admin');
 
 -- --------------------------------------------------------
 
@@ -424,7 +425,7 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `transaction`
