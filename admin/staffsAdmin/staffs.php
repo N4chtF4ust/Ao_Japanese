@@ -1,6 +1,15 @@
 <?php
+session_start();
 
+
+  
 require_once('..\assets\connect.php');
+
+if(!isset($_SESSION['adminName'])) {
+    header("Location: /Ao_Japanese/admin/Ao_admin.php");
+    exit();
+  }
+
 $query = "SELECT * from employees";
 $result = mysqli_query($conn, $query);
 

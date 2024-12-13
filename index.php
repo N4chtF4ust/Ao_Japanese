@@ -10,7 +10,7 @@
   } else if($sel === "Customer") {
     header("location: ../Ao_Japanese/user/PHP/Ao_customer.php ");
   } else if($sel === "Dashboard") {
-    header("location: ../Ao_Japanese/user/PHP/Ao_dashboard.php ");
+    header("location: ../Ao_Japanese/user/PHP/dashboard.php ");
   }
 }
 

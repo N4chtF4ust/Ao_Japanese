@@ -1,6 +1,15 @@
 <?php
+session_start();
+
 
 include '..\assets\connect.php';
+
+if(!isset($_SESSION['adminName'])) {
+  header("Location: /Ao_Japanese/admin/Ao_admin.php");
+  exit();
+}
+
+
 if(isset($_POST['submit'])){
  
     $username = $_POST['username'];

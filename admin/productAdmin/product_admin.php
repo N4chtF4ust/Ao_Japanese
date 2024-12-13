@@ -3,7 +3,11 @@
     session_start();
 
     include '..\assets\connect.php';
-   
+    if(!isset($_SESSION['adminName'])) {
+        header("Location: /Ao_Japanese/admin/Ao_admin.php");
+        exit();
+     }
+    
  
     
     function jsoncrud($TABLE,$ID,$NAME,$PRICE,$IMAGEURL,$AVAILABILITY,$jsonFilePath){ 
