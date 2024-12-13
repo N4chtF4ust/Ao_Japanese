@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include ("Ao_connect.php");
+    include ("/Ao_Japanese/admin/assets/connect.php");
 
 if (isset($_POST['adminUser']) && isset($_POST['adminPass'])) {
 
