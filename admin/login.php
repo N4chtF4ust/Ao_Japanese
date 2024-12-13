@@ -36,6 +36,7 @@ if (isset($_POST['adminUser']) && isset($_POST['adminPass'])) {
             if ($stmt->rowCount() > 0) {
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
                 $_SESSION['adminName'] = $row['username'];
+                $_SESSION['user_id'] = $row['ID'];
                 
                 header("Location: /Ao_Japanese/admin/accountsAdmin/accounts_admin.php");
                 exit();

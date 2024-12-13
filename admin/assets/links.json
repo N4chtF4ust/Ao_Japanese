@@ -3,5 +3,5 @@
        "path2":"../productAdmin/product_admin.php",
        "path3":"../staffsAdmin/staffs.php",
        "path4":"../transactionsAdmin/transactions_admin.php",
-       "path5":"../settingsAdmin/welcome.php"
+       "path5":"../settingsAdmin/Settings_Admin_AddUser.php"
 }

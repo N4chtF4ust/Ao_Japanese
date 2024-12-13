@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --nav-bg-color--: #EEEBDD;
+    --nav-button-bgcolor--: #810000;
+    --table-td-bg-color--: #dbdad2;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    font-family: "Open Sans", sans-serif;
+    overflow-y: auto;
+}
+
+nav{
+    
+    height: 100%;
+    width: 10%;
+    background-color: var(--nav-bg-color--);
+    overflow: hidden;
+
+}
+
+nav > div{
+    display: flex;
+    
+   justify-content: center;
+   align-items: center;
+ 
+}
+
+nav > :first-child{
+    width: 100%;
+    height: 12%;
+   
+
+}
+nav > div:not(:first-child){
+   
+    height: 5%;
+    width: 100%;
+    color: var(--nav-button-bgcolor--);
+    display: flex;
+    font-size: 50%;
+
+}
+
+nav > div:not(:first-child,:last-child){
+   
+    cursor: pointer;
+ 
+ }
+
+nav > div:not(:first-child) > svg{
+    width: 15%;
+    padding: 2%;
+
+}
+
+nav > div:nth-child(6){
+    background-color: var(--nav-button-bgcolor--);
+    color: var(--nav-bg-color--);
+}
+
+nav > div:not(:first-child) > h1{
+    width: 65%;
+}
+
+nav > div:not(:first-child,:last-child,:nth-child(6)):hover{  
+  background-color: var(--table-td-bg-color--);
+}
+
+nav > :last-child button{
+
+   width: 70%;
+   height: 80%;
+   border-radius: 30px;
+   border: none;
+   background-color:var(--nav-button-bgcolor--) ;
+   color: var(--nav-bg-color--);
+   font-family: "Open Sans", sans-serif;
+   font-weight: bolder;
+   font-size: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   cursor: pointer;
+}
+
+nav > :last-child button > svg{
+
+    width: 30%;
+}
+
+nav > :last-child button:active{
+    background-color:var(--nav-bg-color--) ;
+    color: var(--nav-button-bgcolor--);
+    outline: 1px solid var(--nav-button-bgcolor--);   
+ }
+
+.logo_wrapper img{
+    height: 50%;
+}
+
+main {
+    background-color: var(--nav-bg-color--);
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.page_title {
+    font-weight: 800;
+    
+    color: var(--nav-button-bgcolor--);
+    width: 100%;
+    height: 10%;
+    display: grid;
+    place-items: center;
+}
+
+.content_wrapper{
+    
+    height: 90%;
+    width: 100%;
+    display: grid;
+    place-content: center; 
+}
+
+.content_wrapper form{
+    
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center; 
+}
+
+.header-text{
+    font-weight: 800;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10%;
+    color: var(--nav-button-bgcolor--);
+}
+
+.content_wrapper label{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 3%;  
+}
+
+.content_wrapper input{
+    margin-top: 3%;
+    width: 100%;
+    padding: 3% ;
+    font-size: 18px;
+    border-radius: 15px;
+    border: none;
+}
+
+.submit-btn{
+    margin-bottom: 5%;
+    width: 100%;
+    background-color: var(--nav-button-bgcolor--);
+    color: var(--nav-bg-color--);
+    cursor: pointer;
+}
+
+
+.button-wrapper{
+    background-color: blue;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 40%;
+}
+
+.back-btn{
+    margin-bottom: 5%;
+    width: 100%;
+    background-color: var(--nav-button-bgcolor--);
+    color: var(--nav-bg-color--);
+    cursor: pointer;
+}
+
+#button-box { 
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    width: 30%;
+    height: 40%;
+}
+
+#button-box button {
+    font-size: 14px;
+    font-weight: 700;
+    width: 60%;
+    background-color: var(--nav-button-bgcolor--);
+    color: var(--nav-bg-color--);
+    cursor: pointer;
+    border: none;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 35px;
+}
+
+#add-user-form {
+    display: none; /* Form is hidden initially */
+}
+
+/* Phone */
+@media screen and (max-width: 767px) {
+    nav {
+        width: 20%;
+    }
+
+    nav > :first-child {
+        height: 10%;
+    }
+
+    nav h1 {
+        font-size: 80%;
+    }
+
+    nav > div:last-child button {
+        width: 80%;
+        height: 60%;
+        font-size: 10%;
+    }
+
+    .page_title h1 {
+        font-size: 100%;
+    }
+
+    .content_wrapper form {
+        position: absolute;
+        top: 5%;
+        width: 80%;
+        height: 70%;
+        padding: 20px;
+    }
+
+    .header-text {
+        font-size: 20px;
+        margin-bottom: 5%;
+    }
+
+    .submit-btn {
+        width: 70%;
+    }
+
+    .Back-btn {
+        margin-top: 10%;
+        width: 40%;
+    }
+
+    .content_wrapper label {
+        font-size: 14px;
+        margin-bottom: 3%;
+    }
+
+    .content_wrapper input {
+        padding: 5%;
+        font-size: 10px;
+        width: 100%;
+    }
+
+    #button-box {
+        cursor: pointer; 
+        position: absolute;
+        top: 20%;
+        text-align: center;
+        width: 100%;
+        height: 40%;
+    }
+    
+    #button-box button {
+        font-size: 14px;
+        font-weight: 700;
+        width: 60%;
+        background-color: var(--nav-button-bgcolor--);
+        color: var(--nav-bg-color--);
+        cursor: pointer;
+        border: none;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 35px;
+    }
+    
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1280px) {
+    nav {
+        width: 20%;
+    }
+
+    nav h1 {
+        font-size: 100%;
+    }
+
+    nav > div:last-child button {
+        width: 50%;
+        height: 50%;
+    }
+
+    .page_title h1 {
+        font-size: 40px;
+    }
+
+    .content_wrapper{
+        
+        height: 90%;
+        width: 100%;
+        display: grid;
+        place-content: center; 
+    }
+    
+    .content_wrapper form{
+        position: absolute;
+        top: 2%;
+        left: 20%;
+        width: 75%;
+        height: 100%;
+        display: grid;
+        place-content: center; 
+    }
+    
+    .header-text{
+        font-weight: 800;
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 10%;
+        color: var(--nav-button-bgcolor--);
+    }
+    
+    .content_wrapper label{
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 3%;  
+    }
+    
+    .content_wrapper input{
+        margin-top: 3%;
+        width: 100%;
+        padding: 3% ;
+        font-size: 18px;
+        border-radius: 15px;
+        border: none;
+    }
+    
+    .submit-btn{
+        margin-bottom: 5%;
+        width: 100%;
+        background-color: var(--nav-button-bgcolor--);
+        color: var(--nav-bg-color--);
+        cursor: pointer;
+    }
+    
+ 
+    .button-wrapper{
+        background-color: blue;
+        display: grid;
+        place-items: center;
+        width: 100%;
+        height: 40%;
+    }
+    
+    
+    #button-box { 
+        position: absolute;
+        top: 20%;
+        text-align: center;
+        width: 30%;
+        height: 40%;
+    }
+    
+    #button-box button {
+        font-size: 14px;
+        font-weight: 700;
+        width: 60%;
+        background-color: var(--nav-button-bgcolor--);
+        color: var(--nav-bg-color--);
+        cursor: pointer;
+        border: none;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 35px;
+    }
+    
+}
+
+/* Phone Landscape */
+@media screen and (max-width: 932px) and (orientation: landscape) {
+    nav {
+        width: 20%;
+    }
+
+    nav > :first-child {
+        height: 10%;
+    }
+
+    nav h1 {
+        font-size: 80%;
+    }
+
+    nav > div:last-child button {
+        width: 80%;
+        height: 60%;
+        font-size: 10%;
+    }
+
+    .page_title h1 {
+        font-size: 80%;
+    }
+
+    .content_wrapper form {
+        width: 90%;
+        padding: 20px;
+        height: 100%;
+        margin: 0 auto;
+        overflow-y: auto;
+    }
+
+    .header-text {
+        font-size: 18px;
+        margin-bottom: 2%;
+    }
+
+    .submit-btn {
+        width: 70%;
+    }
+
+    .content_wrapper label {
+        font-size: 12px;
+        margin-bottom: 2%;
+    }
+
+    .content_wrapper input {
+        padding: 2%;
+        font-size: 12px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #button-box { 
+        position: absolute;
+        top: 20%;
+        text-align: center;
+        width: 30%;
+        height: 40%;
+    }
+    
+    #button-box button {
+        font-size: 14px;
+        font-weight: 700;
+        width: 60%;
+        background-color: var(--nav-button-bgcolor--);
+        color: var(--nav-bg-color--);
+        cursor: pointer;
+        border: none;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 35px;
+    }
+    
+}
+
+/* Landscape on tablet and desktop */
+@media screen and (min-width: 933px) and (max-width: 1280px) and (orientation: landscape) {
+    nav > div:last-child button {
+        width: 40%;
+    }
+
+    nav > div:not(:first-child):not(:last-child) svg {
+        width: 10%;
+    }
+
+    .content_wrapper{
+    
+        height: 90%;
+        width: 100%;
+        display: grid;
+        place-content: center; 
+    }
+    
+    .content_wrapper form{
+        
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-content: center; 
+    }
+    
+    .header-text{
+        font-weight: 800;
+        text-align: center;
+        font-size: 40px;
+        margin-bottom: 10%;
+        color: var(--nav-button-bgcolor--);
+    }
+    
+    .content_wrapper label{
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 3%;  
+    }
+    
+    .content_wrapper input{
+        margin-top: 3%;
+        width: 100%;
+        padding: 3% ;
+        font-size: 18px;
+        border-radius: 15px;
+        border: none;
+    }
+    
+    .submit-btn{
+        margin-bottom: 5%;
+        width: 100%;
+        background-color: var(--nav-button-bgcolor--);
+        color: var(--nav-bg-color--);
+        cursor: pointer;
+    }
+    
+    
+    
+    .button-wrapper{
+        background-color: blue;
+        display: grid;
+        place-items: center;
+        width: 100%;
+        height: 40%;
+    }
+    
+
+    #button-box { 
+        position: absolute;
+        top: 20%;
+        text-align: center;
+        width: 30%;
+        height: 40%;
+    }
+    
+    #button-box button {
+        font-size: 14px;
+        font-weight: 700;
+        width: 60%;
+        background-color: var(--nav-button-bgcolor--);
+        color: var(--nav-bg-color--);
+        cursor: pointer;
+        border: none;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 35px;
+    }
+    
+}

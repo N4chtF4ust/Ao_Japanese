@@ -35,24 +35,7 @@
             "PRICE": 246
         }
     },
-    "4": {
-        "choice1_1": {
-            "TABLE": "choice1",
-            "PRODUCT_ID": 1,
-            "IMG_FILENAME": "LOGO.png",
-            "PRODUCT": "Katsudon",
-            "QUANTITY": 1,
-            "PRICE": 123
-        },
-        "choice1_2": {
-            "TABLE": "choice1",
-            "PRODUCT_ID": 2,
-            "IMG_FILENAME": "QR CODE.png",
-            "PRODUCT": "Katsudon",
-            "QUANTITY": 1,
-            "PRICE": 123
-        }
-    },
+    "4": [],
     "5": {
         "choice1_3": {
             "TABLE": "choice1",

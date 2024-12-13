@@ -136,7 +136,7 @@ main{
 }
 
 .content_wrapper{
-    height: 95%;
+    height: 90%;
     width: 100%;
     display: flex;
     place-content: left; 
@@ -157,10 +157,11 @@ main{
 }
 .content_wrapper label{
     font-size: 18px;
+    font-weight: 600;
     margin-bottom: 3%;
 }
 .content_wrapper input{
-    padding: 5% ;
+    padding: 4% ;
     font-size: 18px;
     border-radius: 15px;
     border: none;
@@ -201,6 +202,44 @@ main{
         font-size: 100%;
      }
 
+     .content_wrapper{
+        height: 95%;
+        width: 100%;
+        display: flex;
+        place-content: left; 
+    }
+    
+    .content_wrapper form{ 
+        width: 150%;
+        height: 100%;
+        display: grid;
+        place-content: center; 
+    }
+    
+    .header-text{
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 10%;
+        color: var(--nav-button-bgcolor--);
+    }
+    .content_wrapper label{
+        font-size: 14px;
+        margin-bottom: 3%;
+    }
+    .content_wrapper input{
+        padding: 3% ;
+        font-size: 18px;
+        border-radius: 15px;
+        border: none;
+    }
+    
+    .submit-btn{
+        width: 100%;
+        background-color: var(--nav-button-bgcolor--);
+        color: var(--nav-bg-color--);
+        cursor: pointer;
+    }
+
 
 
 
@@ -226,6 +265,44 @@ main{
         font-size: 100%;
      }
 
+     .content_wrapper{
+        height: 95%;
+        width: 100%;
+        display: flex;
+        place-content: left; 
+    }
+    
+    .content_wrapper form{ 
+        width: 150%;
+        height: 100%;
+        display: grid;
+        place-content: center; 
+    }
+    
+    .header-text{
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 10%;
+        color: var(--nav-button-bgcolor--);
+    }
+    .content_wrapper label{
+        font-size: 18px;
+        margin-bottom: 3%;
+    }
+    .content_wrapper input{
+        padding: 3% ;
+        font-size: 18px;
+        border-radius: 15px;
+        border: none;
+    }
+    
+    .submit-btn{
+        width: 100%;
+        background-color: var(--nav-button-bgcolor--);
+        color: var(--nav-bg-color--);
+        cursor: pointer;
+    }
+
 }
 
 @media screen and (max-width: 932px) and (orientation:landscape){
@@ -245,6 +322,44 @@ main{
      
    
      }
+
+     .content_wrapper{
+        height: 95%;
+        width: 100%;
+        display: flex;
+        place-content: left; 
+    }
+    
+    .content_wrapper form{ 
+        width: 150%;
+        height: 100%;
+        display: grid;
+        place-content: center; 
+    }
+    
+    .header-text{
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 10%;
+        color: var(--nav-button-bgcolor--);
+    }
+    .content_wrapper label{
+        font-size: 14px;
+        margin-bottom: 3%;
+    }
+    .content_wrapper input{
+        padding: 3% ;
+        font-size: 18px;
+        border-radius: 15px;
+        border: none;
+    }
+    
+    .submit-btn{
+        width: 100%;
+        background-color: var(--nav-button-bgcolor--);
+        color: var(--nav-bg-color--);
+        cursor: pointer;
+    }
     
 }
 
@@ -256,6 +371,44 @@ main{
 
     nav > div:not(:first-child,:last-child) svg{
         width: 10%;
+    }
+
+    .content_wrapper{
+        height: 95%;
+        width: 100%;
+        display: flex;
+        place-content: left; 
+    }
+    
+    .content_wrapper form{ 
+        width: 150%;
+        height: 100%;
+        display: grid;
+        place-content: center; 
+    }
+    
+    .header-text{
+        text-align: center;
+        font-size: 28px;
+        margin-bottom: 10%;
+        color: var(--nav-button-bgcolor--);
+    }
+    .content_wrapper label{
+        font-size: 14px;
+        margin-bottom: 3%;
+    }
+    .content_wrapper input{
+        padding: 3% ;
+        font-size: 18px;
+        border-radius: 15px;
+        border: none;
+    }
+    
+    .submit-btn{
+        width: 100%;
+        background-color: var(--nav-button-bgcolor--);
+        color: var(--nav-bg-color--);
+        cursor: pointer;
     }
 
 }
