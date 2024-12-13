@@ -45,11 +45,11 @@ function eye(pass,eye) {
 
   if (pass.type === "password") {
     pass.type = "text";
-    eye.src = "../homepage_photo/eye-fill-slash.svg";
+    eye.src = "../admin/CSS/homepage_photo/eye-fill-slash.svg";
 
   } else {
     pass.type = "password";
-    eye.src = "../homepage_photo/eye-fill.svg";
+    eye.src = "../admin/CSS/homepage_photo/eye-fill.svg";
     
   }
 }
