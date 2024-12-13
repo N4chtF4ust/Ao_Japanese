@@ -144,6 +144,10 @@ main{
 
 }
 
+.content_wrapper div{
+    height: 100%;
+}
+
 .content_wrapper form{
     width: 100%;
     display: flex;
@@ -168,14 +172,7 @@ main{
   
 }
 
-.content_wrapper form input[type="file"]::-webkit-file-upload-button{
-   background-color:var(--nav-button-bgcolor--);
-   color: var(--nav-bg-color--);   
-    
-}
 .option_wrapper select{ 
-    
-    
     color: var(--nav-button-bgcolor--);
     font-weight: bolder;
 
