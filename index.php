@@ -23,7 +23,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ao Restaurant</title>
-<link rel="stylesheet" href="../Ao_Japanese/user/CSS/signin_signup.css">
+<link rel="stylesheet" href="../Ao_Japanese/user/CSS/selectUser.css">
 <link rel="icon" href="logo.png" type="image/x-icon">
 <script src="../Ao_Japanese/user/JSC/signin_signup.js" defer></script>
 
