@@ -137,7 +137,7 @@ function table(){
   }
   
   
-  setInterval(function(){table();}, 1000);
+  setInterval(function(){table();}, 500);
   
   </script>
 
