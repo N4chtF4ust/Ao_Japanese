@@ -319,8 +319,8 @@ table tbody > *{
 }
 
 table tr th{
-    background-color: var(--table-td-bg-color--);
-    color: var(--nav-button-bgcolor--);
+    background-color:var(--nav-button-bgcolor--);
+    color: var(--nav-bg-color--);
     width: 100%;
     padding: 1%;
    

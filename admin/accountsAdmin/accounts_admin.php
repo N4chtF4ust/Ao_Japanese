@@ -94,7 +94,7 @@
 
     <main>
         <div class="page_title">
-            <br>
+            
             <h1>Account List</h1>
 
         </div>
@@ -115,7 +115,7 @@
 
                      <?php
 
-                        $showCust = "SELECT * FROM customers";
+                        $showCust = "SELECT * FROM customers order by ID desc";
                         $result = mysqli_query($conn, $showCust);
 
                         while ($row = mysqli_fetch_array($result)){
