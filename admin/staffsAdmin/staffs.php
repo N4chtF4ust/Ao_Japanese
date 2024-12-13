@@ -136,7 +136,7 @@ if (isset($_POST['delete'])) {
 
 
     <main>
-        <div class="page_title">
+    <div class="page_title">
             <h1>Employees</h1>
 
         </div>
@@ -180,7 +180,6 @@ if (isset($_POST['delete'])) {
 
 
             </form>
-            
 
 
             <table border="0" class="choice_content" id="contents">
@@ -189,6 +188,7 @@ if (isset($_POST['delete'])) {
            </div>
 
         </div>
+
 
       
 
