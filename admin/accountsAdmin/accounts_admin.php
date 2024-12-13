@@ -1,7 +1,7 @@
 <?php
     
     session_start();
-    include ("/Ao_Japanese/admin/Ao_connect.php");
+    include '..\assets\connect.php';
 
  if(!isset($_SESSION['adminName'])) {
     header("Location: /Ao_Japanese/admin/Ao_admin.php");

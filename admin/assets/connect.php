@@ -2,7 +2,7 @@
 $servername = "localhost";  // Server name or IP address
 $username = "root";         // MySQL username
 $password = "";             // MySQL password
-$dbname = "ao";  // Name of the database you want to connect to
+$dbname = "Ao";  // Name of the database you want to connect to
 
 // Create a connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
