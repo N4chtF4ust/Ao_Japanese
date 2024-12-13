@@ -12,7 +12,7 @@
 <script src="signin_signup.js" defer></script>
 
 </head>
-<body>
+<body onload="table();" >
   <div class="homepage">
           <div class="right_container" id="right_container">
 
