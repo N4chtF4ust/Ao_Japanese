@@ -195,7 +195,7 @@ if (userResponse) {
   xhttp2.onload = function(){
     document.getElementById("cart_container").innerHTML = this.responseText;
   }
-  xhttp2.open("POST", "Ao_Cart.php",true);
+  xhttp2.open("POST", "Ao_cart.php",true);
   xhttp2.send();
 //Icon Quantity
   const xhttp3 = new XMLHttpRequest();

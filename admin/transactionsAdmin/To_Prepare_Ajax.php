@@ -23,10 +23,11 @@ $result = $stmt->get_result(); // Get the result from the prepared statement
 if ($result->num_rows > 0) {
 while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
   $found = $row["$col_name"] ;
+  return $found;
+
 }
 }
 
-return $found;
 
 }
 
@@ -85,7 +86,15 @@ if ($result->num_rows>0) {
                 </td>
 
                 <td>
-                    <img src="../assets/uploaded_img/<?php echo find_from_db("img",$product['TABLE'],$product['PRODUCT_ID'],$conn  ); ?>" alt="images">
+                    <img src="../assets/uploaded_img/<?php if( find_from_db("img",$product['TABLE'],$product['PRODUCT_ID'],$conn ) ){
+                        echo find_from_db("img",$product['TABLE'],$product['PRODUCT_ID'],$conn);
+                    } 
+                    else{
+                        echo "no-image.png";
+                    }
+                    
+                    
+                    ?>" alt="images">
                 </td>
 
                 <td>

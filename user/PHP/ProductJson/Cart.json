@@ -1,0 +1,32 @@
+{
+    "1": {
+        "choice1_1": {
+            "TABLE": "choice1",
+            "PRODUCT_ID": 1,
+            "IMG_FILENAME": "LOGO.png",
+            "PRODUCT": "Katsudon",
+            "QUANTITY": 3,
+            "PRICE": 369
+        }
+    },
+    "2": {
+        "choice1_1": {
+            "TABLE": "choice1",
+            "PRODUCT_ID": 1,
+            "IMG_FILENAME": "LOGO.png",
+            "PRODUCT": "Katsudon",
+            "QUANTITY": 2,
+            "PRICE": 246
+        }
+    },
+    "3": {
+        "choice1_1": {
+            "TABLE": "choice1",
+            "PRODUCT_ID": 1,
+            "IMG_FILENAME": "LOGO.png",
+            "PRODUCT": "Katsudon",
+            "QUANTITY": 3,
+            "PRICE": 369
+        }
+    }
+}

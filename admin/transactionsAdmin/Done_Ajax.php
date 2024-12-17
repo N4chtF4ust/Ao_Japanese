@@ -23,10 +23,11 @@ function find_from_db($col_name,$table,$productId,$conn ){
     if ($result->num_rows > 0) {
     while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
       $found = $row["$col_name"] ;
+      return $found;
     }
     }
     
-    return $found;
+
     
 }
 
@@ -80,7 +81,15 @@ if ($result->num_rows>0) {
                     <p><?php echo find_from_db("name",$product['TABLE'],$product['PRODUCT_ID'],$conn  ); ?></p>
                 </td>
                 <td>
-                    <img src="../assets/uploaded_img/<?php echo find_from_db("img",$product['TABLE'],$product['PRODUCT_ID'],$conn  ); ?>" alt="">
+                <img src="../assets/uploaded_img/<?php if(find_from_db("img",$product['TABLE'],$product['PRODUCT_ID'],$conn)){
+                        echo find_from_db("img",$product['TABLE'],$product['PRODUCT_ID'],$conn  );
+                    }
+                    else{
+                        echo "no-image.png";
+                    }
+                    
+                    
+                    ?>" alt="">
                 </td>
                 <td>
                     <p><?php echo find_from_db("price",$product['TABLE'],$product['PRODUCT_ID'],$conn  ); ?></p>
